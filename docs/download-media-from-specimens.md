@@ -6,6 +6,7 @@
 1. User needs to download media files automatically.
 1. Download process cannot break when an unresolvable download URL is passed.
 1. Output should be a directory with image files.
+1. Number of images expected is relatively small (<100,000?).
 
 ## Example scenario
 
