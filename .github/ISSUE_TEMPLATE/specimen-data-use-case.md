@@ -1,15 +1,14 @@
 ---
-name: Specimen Data Use Case
-about: Create an issue to describe how you would like to be able to access and use
-  specimen data.
+name: Specimen data use case
+about: Describe how you want to access and use specimen data
 title: ''
-labels: ''
+labels: use-case
 assignees: ''
 
 ---
 
-## What would you like to be able to do?
+**What would you like to be able to do?**
 
-## What problems are you having?
+**What problems are you having?**
 
-## Do you have any ideas for technical solutions?
+**Do you have any ideas for technical solutions?**
