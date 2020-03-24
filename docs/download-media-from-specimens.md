@@ -15,3 +15,5 @@ Researcher searches for herbarium specimens of species in the genus "Acer" and w
 ## Solutions
 
 - For iDigBio, using R: [view in browser](download-media-from-specimens_solution.html) or [download to run locally](download-media-from-specimens_solution.Rmd)
+
+{:toc}
