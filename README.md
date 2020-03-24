@@ -17,13 +17,13 @@ Documented use cases and technical solutions can be found in the [docs](docs) di
 
 ### Document use cases
 
-The simplest method of sharing your experience and needs is to [create an issue describing your use case](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues). Or, if you are comfortable describing your use case in detail, you can edit an existing, or create a new, use case write-up in markdown and put it in the [docs](docs) directory. For use cases that would benefit from more conversation or refinement, a GitHub issue provides space to do that work collaboratively; ultimately, issues can get documented in markdown.
+The simplest method of sharing your experience and needs is to [create an issue describing your use case](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues). If you are comfortable describing your use case in detail, you can edit an existing, or create a new, use case write-up in markdown and put it in the [docs](docs) directory. For use cases that would benefit from more conversation or refinement, a GitHub issue provides space to do that work collaboratively; ultimately, issues can get documented in markdown.
 
-### Add to conversations about specific problems related to use cases and/or their technical solutions
+### Comment on issues
 
 [Issues](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues) in this repository offer a place for conversation, and we encourage all users to **comment on existing use case issues**. For example, you may find that someone else has already submitted an issue that describes a use case similar to yours and to which you can add thoughts.
 
-Issues in this repository offer a place to **note problems with any of the technical solutions** provided in the [docs](docs) directory.
+Issues in this repository also offer a place to **note problems with any of the technical solutions** provided in the [docs](docs) directory. Feel free to create a new issue if need be.
 
 This repository is a place for learning, and users of all levels should feel welcome to post an issue. Responding to an issue should involve thoughtfully answering the question posed and, where appropriate, updating files in the [docs](docs) directory to reflect the answer in context so that future users don't need to sift through closed issues or re-ask the same question.
 

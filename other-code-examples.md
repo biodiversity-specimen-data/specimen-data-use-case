@@ -1,4 +1,4 @@
-This document provides a place to post links to code generally related to using biodiversity occurrence data and hosted on an external source, e.g. your own GitHub repo, a lab website, etc.
+This document provides a place to post links to code generally related to using biodiversity specimen data and hosted on an external source, e.g. your own GitHub repo, a lab website, etc.
 
 ## Links to external code examples
 
@@ -12,4 +12,4 @@ This document provides a place to post links to code generally related to using 
 
 **[TrIAS](https://github.com/trias-project/checklist-recipe/wiki).** Tools for standardizing thematic species checklist data to Darwin Core using R.
 
-**[Spatial Ecology Workshop](https://ufbi2018.github.io/).** Content from workshop put together by University of Florida Biodiversity Informatics fellows for a 2018 workshop.
+**[Spatial Ecology Workshop](https://ufbi2018.github.io/).** Content from a 2018 workshop put together by University of Florida Biodiversity Informatics fellows.

@@ -1,4 +1,4 @@
-## Important Links
+## Important links
 
 iDigBio API overview: https://www.idigbio.org/wiki/index.php/IDigBio_API
 
