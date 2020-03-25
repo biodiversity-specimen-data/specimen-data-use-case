@@ -1,4 +1,7 @@
-# Download media based on specimen record search
+---
+title: Download media based on specimen record search
+category: media
+---
 
 ## Conditions
 
@@ -12,6 +15,4 @@
 
 Researcher searches for herbarium specimens of species in the genus "Acer" and would like to download media associated with any records returned by this search. Media downloaded must retain relationship to specimen record.
 
-## Solutions
-
-- For iDigBio, using R: [view in browser](download-media-from-specimens_solution.html) or [download to run locally](download-media-from-specimens_solution.Rmd)
+## Links to external solutions

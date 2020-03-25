@@ -1,0 +1,24 @@
+title: "Biodiversity Specimen Data"
+description: "a collection of specific use cases of biodiversity specimen data, documented conceptually and, where possible, linked to technical solutions"
+
+theme: jekyll-theme-slate
+plugins:
+  - jekyll-sitemap
+
+collections:
+  use-case:
+    output: true
+    permalink: /:name
+  solution:
+    output: true
+
+defaults:
+  - scope:
+      path: "" # all files in the project
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "use-case" # all files in the use-case collection
+    values:
+      layout: "use-case"

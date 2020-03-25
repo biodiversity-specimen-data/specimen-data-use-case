@@ -1,4 +1,7 @@
-# Report metrics for collections within an institution
+---
+title: Report metrics for collections within an institution
+category: collections management
+---
 
 ## Conditions
 
@@ -6,4 +9,4 @@
 
 Director of Collections would like to be able to compile usage stats for all Museum collections to show to administrators and board members.
 
-## Solutions
+## Links to external solutions
