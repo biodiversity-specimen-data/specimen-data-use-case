@@ -10,7 +10,7 @@ title: Welcome
     <ul>
       {% assign items = cat.items | sort: 'title' %}
       {% for item in items %}
-        <li><a href="{{ absolute_url }} {{ item.url }}">{{ item.title }}</a></li>
+        <li><a href="{{ item.url | absolute_url }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
 {% endfor %}
