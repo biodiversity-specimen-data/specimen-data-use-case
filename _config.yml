@@ -1,6 +1,5 @@
 title: "Biodiversity Specimen Data"
 description: "a collection of specific use cases of biodiversity specimen data, documented conceptually and, where possible, linked to technical solutions"
-baseurl: "/specimen-data-use-case"
 
 theme: jekyll-theme-slate
 plugins:
