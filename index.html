@@ -2,17 +2,15 @@
 title: Welcome
 ---
 
-<p>Browse categories below...</p>
+<p>Browse use cases sorted by category below. See <a href="{{ '/helpful-links' | relative_url }}">helpful links</a> and <a href="{{ '/other-code-examples' | relative_url }}">other code examples</a> for additional information.</p>
 
-{% assign mycats = site.use-case | group_by: 'category' %}
+{% assign mycats = site.use-case | group_by: 'category' | sort: 'category' | reverse %}
 {% for cat in mycats %}
 <h3>{{ cat.name | capitalize }}</h3>
     <ul>
-      {% assign items = cat.items | sort: 'title' %}
+      {% assign items = cat.items %}
       {% for item in items %}
-        <li><a href="{{ item.url | prepend:site.baseurl }}">{{ item.title }}</a></li>
+        <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
 {% endfor %}
-
-See <a href="biodiversity-specimen-data.github.io/specimen-data-use-case/helpful-links">helpful links</a> and <a href="https://biodiversity-specimen-data.github.io/specimen-data-use-case/other-code-examples">other code examples</a> for more...

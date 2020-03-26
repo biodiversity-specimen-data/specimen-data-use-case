@@ -33,15 +33,25 @@
 
         {{ content }}
 
-        <h2>Solutions hosted in this repo</h2>
-            <p>
-              {% assign filtered_solutions = site.solution | where_exp:"item", "item.url contains page.url"  %}
+        <h3>Solutions hosted in this repo</h3>
+            <ul>
+              {% assign match_split_1 = page.url | split: '/' %}
+              {% assign match_split_2 = match_split_1[2] | split: '.' %}
+              {% assign match = match_split_2[0] %}
+              {% assign filtered_solutions = site.solution | where_exp:"item", "item.url contains match"  %}
               {% for item in filtered_solutions %}
-                <a href="{{ item.url }}">{{ item.url }} </a>
+              {% assign text_split_1 = item.url | split: '/' %}
+              {% assign text = text_split_1[2] | split: '.' %}
+              {% assign html_url = item.url | split: '.' %}
+              <li>
+                {{ text[0] }} (<a href="{{ html_url[0] | append: '.html' | relative_url }}">view in browser</a>)
+                 (<a href="{{ item.url | relative_url }}">download for local use</a>)
+              </li>
               {% endfor %}
-            </p>
+            </ul>
 
-        <p align="center" style="border: 2px solid #212121; padding: 10px 0px;"><a href="{{ site.github.repository_url }}">Edit this use case on GitHub</a></p>
+        <p align="center" style="border: 2px solid #212121; padding: 5px 0px;"><a href="{{ 'https://github.com/biodiversity-specimen-data/specimen-data-use-case/tree/master/'| append: page.path }}">edit this use case on GitHub</a></p>
+        <p align="center" style="border: 2px solid #212121; padding: 5px 0px;"><a href="{{ '/' | relative_url }}">return to use case index</a></p>
 
       </section>
     </div>
@@ -49,7 +59,6 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p align ="center"><strong>- <a href="{{ site.baseurl }}/index.html">return to use case index</a> -</strong></p>
         {% if site.github.is_project_page %}
         <p class="copyright">This site maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
         {% endif %}

@@ -1,13 +1,9 @@
 ## Important links
 
-iDigBio API overview: https://www.idigbio.org/wiki/index.php/IDigBio_API
-
-iDigBio Search API documentation:
-https://github.com/iDigBio/idigbio-search-api/wiki
-
-iDigBio R package: https://github.com/idigbio/ridigbio
-
-iDigBio Python library: https://github.com/idigbio/idigbio-python-client/
+- [iDigBio API overview](https://www.idigbio.org/wiki/index.php/IDigBio_API)
+- [iDigBio Search API documentation](https://github.com/iDigBio/idigbio-search-api/wiki)
+- [iDigBio R package](https://github.com/idigbio/ridigbio)
+- [iDigBio Python library](https://github.com/idigbio/idigbio-python-client/)
 
 ## R packages we like
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
@@ -27,7 +23,7 @@ iDigBio Python library: https://github.com/idigbio/idigbio-python-client/
 
 ## Links for more learning
 
-- Software and Data Carpentries: https://carpentries.org/
-- Hadley Wickham’s (of the Tidyverse) site with online books: http://hadley.nz/#teaching
-- Unit testing for R: https://testthat.r-lib.org/
-- Background reading on unit testing for R: http://r-pkgs.had.co.nz/tests.html
+- [Software and Data Carpentries](https://carpentries.org/)
+- [Hadley Wickham’s (of the Tidyverse) site with online books](http://hadley.nz/#teaching)
+- [Unit testing for R](https://testthat.r-lib.org/)
+- [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)

@@ -3,7 +3,7 @@ title: Download media based on specimen record search
 category: media
 ---
 
-## Conditions
+### Conditions
 
 1. User needs to identify media records based on specimen record search.
 1. User needs to download media files automatically.
@@ -11,8 +11,9 @@ category: media
 1. Output should be a directory with image files.
 1. Number of images expected is relatively small (<100,000?).
 
-## Example scenario
+### Example scenario
 
 Researcher searches for herbarium specimens of species in the genus "Acer" and would like to download media associated with any records returned by this search. Media downloaded must retain relationship to specimen record.
 
-## Links to external solutions
+### Links to external solutions
+-
