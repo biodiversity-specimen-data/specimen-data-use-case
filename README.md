@@ -17,7 +17,9 @@ Documented use cases and technical solutions can be found in the [use-case](_use
 
 ### Document use cases
 
-The simplest method of sharing your experience and needs is to [create an issue describing your use case](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues). If you are comfortable describing your use case in detail, you can write up a new use case in markdown and put it in the [use-case](_use-case) directory; see [template](_use-case/_TEMPLATE.md) for our standard format. For use cases that would benefit from more conversation or refinement, a GitHub issue provides space to do that work collaboratively. Ultimately, issues can get documented in markdown.
+The simplest method of sharing your experience and needs is to [create an issue describing your use case](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues). For use cases that would benefit from more conversation or refinement, a GitHub issue provides space to do that work collaboratively. Ultimately, issues can get documented in markdown.
+
+If you are comfortable describing your use case in detail, you can skip straight to writing up a new use case in markdown and putting it in the [use-case](_use-case) directory. See the [template](_use-case/_TEMPLATE.md) file for our standard format. It is important to fill out the front matter fields, "title" and "category", at the top of a new use case document because these fields are used to sort use cases on our [prettified GitHub Pages website](https://biodiversity-specimen-data.github.io/specimen-data-use-case/). Your title should be descriptive yet brief, and your category can either be one of the existing categories found on the home page of the GitHub Pages website, or a new one if appropriate.
 
 ### Comment on issues
 
@@ -29,10 +31,10 @@ This repository is a place for learning, and users of all levels should feel wel
 
 ### Document technical solutions for a use case
 
-We welcome technical solutions for any use cases described in this repository. You are welcome to provide solutions within this repository (pull request or ask for permissions), or if you prefer to maintain work in your own repository you can link your repo to the appropriate use case markdown in the [use-case](_use-case) directory. Please follow these guidelines for documenting technical solutions:
+We welcome technical solutions for any use cases described in this repository. You are welcome to provide solutions within this repository (pull request or ask for permissions), or if you prefer to maintain work in your own repository you can link your repo to the appropriate markdown in the [use-case](_use-case) directory. Please follow these guidelines for documenting technical solutions:
 - All solutions should be **based on a use case** as documented in the [use-case](_use-case) directory. If you have code for a solution that does not yet have a use case written, please write up the use case or see below for an option to share other code examples.
 - If at all possible, please provide a rendered **HTML version** of your solution for accessibility and easy viewing via our GitHub Pages website. Note that you should keep the HTML file current with the code file, i.e. re-render if you make changes.
-- **Naming convention** for files in the [solution](_solution) directory is _[short name for use case] underscore [primary package/library]_, e.g. "download-media-from-specimens_ridigbio.Rmd" and "download-media-from-specimens_ridigbio.html". Use lowercase, and hyphens as space separators. If you are adding a solution that would duplicate an existing filename, suffix it with a numeral, e.g. "download-media-from-specimens_ridigbio-2.Rmd." If you do not name your file as described here, it will not automatically be linked to the use case page in our [prettified GitHub Pages website](https://biodiversity-specimen-data.github.io/specimen-data-use-case/).
+- **Naming convention** for files in the [solution](_solution) directory is _[shortname for use case] underscore [primary package/library]_, e.g. "download-media-from-specimens_ridigbio.Rmd" and "download-media-from-specimens_ridigbio.html". The shortname for the solution and the use case files must match exactly. Use lowercase, and hyphens as space separators. If you are adding a solution that would duplicate an existing filename, suffix it with a numeral, e.g. "download-media-from-specimens_ridigbio-2.Rmd." If you do not name your file as described here, it will not automatically be linked to the use case page in our [prettified GitHub Pages website](https://biodiversity-specimen-data.github.io/specimen-data-use-case/).
 
 ### Share other code
 
