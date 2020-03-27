@@ -1,0 +1,20 @@
+---
+title: "Identify people to contact based on data provided, using R and iDigBio"
+output:
+  html_document:
+    code_folding: show
+    df_print: kable
+---
+
+Please see **Use Case: [Find tissue samples](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/identify-data-contacts)** for context.
+
+```{r message=FALSE}
+#load core libraries; you will need to install these packages if you have not already
+library(ridigbio)
+library(tidyverse)
+
+#load library for making nice HTML output via RMarkdown
+library(kableExtra)
+```
+
+TBD
