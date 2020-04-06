@@ -25,5 +25,6 @@
 
 - [Software and Data Carpentries](https://carpentries.org/)
 - [Hadley Wickham’s (of the Tidyverse) site with online books](http://hadley.nz/#teaching)
+- [Tidyverse style guide for code](https://style.tidyverse.org/)
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
