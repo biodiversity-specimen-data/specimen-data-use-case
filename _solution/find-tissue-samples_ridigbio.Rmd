@@ -6,29 +6,37 @@ output:
     df_print: kable
 ---
 
-Please see **Use Case: [Find tissue samples](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/find-tissue-samples)** for context.
+Code here written by [Erica Krimmel](https://orcid.org/0000-0003-3192-0080). Please see **Use Case: [Find tissue samples](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/find-tissue-samples)** for context.
 
 ```{r message=FALSE}
-#load core libraries; you will need to install these packages if you have not already
+# Load core libraries; install these packages if you have not already
 library(ridigbio)
 library(tidyverse)
 
-#load library for making nice HTML output via RMarkdown
+# Load library for making nice HTML output
 library(kableExtra)
 ```
 
 ## Write a query to search for specimen records
 
-First, let's find all the specimen records for the species you are interested in. Do this using the `idig_search` function from the ridigbio package. You can learn more about this function from the [iDigBio API documentation](https://github.com/iDigBio/idigbio-search-api/wiki) and [ridigbio documentation](https://cran.r-project.org/web/packages/ridigbio/ridigbio.pdf). In this example, we want to search for specimens identified as being in one of the following genera: _Manis_, _Rhinolophus_, or _Paguma_.
+First, let's find all the specimen records for the species you are interested in. Do this using the `idig_search_records` function from the `ridigbio` package. You can learn more about this function from the [iDigBio API documentation](https://github.com/iDigBio/idigbio-search-api/wiki) and [ridigbio documentation](https://cran.r-project.org/web/packages/ridigbio/ridigbio.pdf). In this example, we want to search for specimens identified as being in one of the following genera: _Manis_, _Rhinolophus_, or _Paguma_.
 
 ```{r}
-#edit the fields (e.g. "genus") and values (e.g. "manis") in `list()` to adjust your query;
-#edit the fields (e.g. "uuid") in `fields` to adjust the columns returned in your results;
-records <- idig_search(rq = list(genus = c("manis","rhinolophus","paguma")),
-                       fields = c("uuid", "recordset", "institutioncode",
-                                  "genus", "scientificname",
-                                  "country", "data.dwc:year",
-                                  "data.dwc:collectionCode", "catalognumber",
+# Edit the fields (e.g. `genus`) and values (e.g. "manis") in `list()` 
+# to adjust your query and the fields (e.g. `uuid`) in `fields` to adjust the
+# columns returned in your results
+records <- idig_search_records(rq = list(genus = c("manis",
+                                                   "rhinolophus",
+                                                   "paguma")),
+                       fields = c("uuid",
+                                  "recordset",
+                                  "institutioncode",
+                                  "genus",
+                                  "scientificname",
+                                  "country",
+                                  "data.dwc:year",
+                                  "data.dwc:collectionCode",
+                                  "catalognumber",
                                   "data.dwc:preparations"))
 ```
 
@@ -37,62 +45,63 @@ The query above returned `r as.character(nrow(records))` records from the iDigBi
 ```{r echo = FALSE, results = 'asis'}
 knitr::kable(head(records)) %>% 
     kable_styling(bootstrap_options = 
-                         c("striped", "hover", "condensed")) %>% 
-  scroll_box(height = "300px")
+                         c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "100%")
 ```
 
 ## Filter specimen records by preparation type
 
-These results include _all_ specimen records from the genera of interest, but now we would like to narrow our search to include only specimens that may have cryo-preserved tissue available. We are looking in the [dwc:preparations](https://dwc.tdwg.org/terms/#dwc:preparations) field for this information, but there isn't a controlled vocabulary in use and so the data is not very standard. We can summarize the distinct values present in this field for all `r as.character(nrow(records))` records:
+These results include _all_ specimen records from the genera of interest, but now we would like to narrow our search to include only specimens that may have cryo-preserved tissue available. We are looking in the [dwc:preparations](https://dwc.tdwg.org/terms/#dwc:preparations) field for this information, but there isn't a controlled vocabulary in use and so the data is not very standard. We can start by summarizing the distinct values present in this field for all `r as.character(nrow(records))` records:
 
 ``` {r}
-#list distinct values for the preparation field
-prepSummary <- records %>% 
+# List distinct values for the `preparation` field
+prepsummary <- records %>% 
   group_by(`data.dwc:preparations`) %>% 
   tally()
 
-knitr::kable(prepSummary) %>% 
+# Display `prepsummary` in HTML output
+knitr::kable(prepsummary) %>% 
     kable_styling(bootstrap_options = 
-                         c("striped", "hover", "condensed"),
+                         c("striped", "hover", "condensed", "responsive"),
                   full_width = FALSE) %>% 
   scroll_box(height = "400px")
 ```
 
-### Select values to filter on
+### Select values to filter on and apply filter
 
 Based on the distinct values above, it seems like we can use the search terms "froze," "freeze," and "tissue" to narrow our results. We do this in the code below.
 
 ``` {r}
-#edit the fields (e.g. "genus") and values (e.g. "manis") in `list()` to adjust your query;
-recordsFiltered <- records %>% 
+# Normalize values in `data.dwc:preparations` to be all lowercase; then
+# filter rows that include our search terms
+recordsfiltered <- records %>% 
   mutate(`data.dwc:preparations` = str_to_lower(`data.dwc:preparations`)) %>% 
   filter(grepl('freeze|froze|tissue', `data.dwc:preparations`))
 ```
 
-### Apply filter
-
-Now we have `r as.character(nrow(recordsFiltered))` records, all of which are displayed in the table here:
+Now we have `r as.character(nrow(recordsfiltered))` records, all of which are displayed in the table here:
 
 ```{r echo = FALSE, results = 'asis'}
-knitr::kable(recordsFiltered) %>% 
+knitr::kable(recordsfiltered) %>% 
     kable_styling(bootstrap_options = 
-                         c("striped", "hover", "condensed")) %>% 
+                         c("striped", "hover", "condensed", "responsive")) %>% 
   scroll_box(height = "600px")
 
-#if you have this code open in R, you can uncomment the line below to save recordsFiltered as a csv file
-#write_csv(recordsFiltered, "recordsFiltered.csv")
+# If you have this code open in R, you can uncomment the line below to
+# save `recordsfiltered` as a csv file to your working directory
+# write_csv(recordsfiltered, "recordsfiltered.csv")
 ```
 
 We can view the preparation distinct values present in our subset of data to see if there are any other values we might want to filter on:
 
 ``` {r echo = FALSE, results = 'asis'}
-#list distinct values for the preparation field in recordsFiltered
-recordsFiltered %>% 
+# List distinct values for the `preparation` field in recordsfiltered
+recordsfiltered %>% 
   group_by(`data.dwc:preparations`) %>% 
   tally() %>% 
   knitr::kable() %>% 
     kable_styling(bootstrap_options = 
-                         c("striped", "hover", "condensed"),
+                         c("striped", "hover", "condensed", "responsive"),
                   full_width = FALSE) %>% 
   scroll_box(height = "400px")
 ```

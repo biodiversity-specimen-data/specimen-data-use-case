@@ -446,57 +446,65 @@ summary {
 </div>
 
 
-<p>Please see <strong>Use Case: <a href="https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/find-tissue-samples">Find tissue samples</a></strong> for context.</p>
-<pre class="r"><code>#load core libraries; you will need to install these packages if you have not already
+<p>Code here written by <a href="https://orcid.org/0000-0003-3192-0080">Erica Krimmel</a>. Please see <strong>Use Case: <a href="https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/find-tissue-samples">Find tissue samples</a></strong> for context.</p>
+<pre class="r"><code># Load core libraries; install these packages if you have not already
 library(ridigbio)
 library(tidyverse)
 
-#load library for making nice HTML output via RMarkdown
+# Load library for making nice HTML output
 library(kableExtra)</code></pre>
 <div id="write-a-query-to-search-for-specimen-records" class="section level2">
 <h2>Write a query to search for specimen records</h2>
-<p>First, let’s find all the specimen records for the species you are interested in. Do this using the <code>idig_search</code> function from the ridigbio package. You can learn more about this function from the <a href="https://github.com/iDigBio/idigbio-search-api/wiki">iDigBio API documentation</a> and <a href="https://cran.r-project.org/web/packages/ridigbio/ridigbio.pdf">ridigbio documentation</a>. In this example, we want to search for specimens identified as being in one of the following genera: <em>Manis</em>, <em>Rhinolophus</em>, or <em>Paguma</em>.</p>
-<pre class="r"><code>#edit the fields (e.g. &quot;genus&quot;) and values (e.g. &quot;manis&quot;) in `list()` to adjust your query;
-#edit the fields (e.g. &quot;uuid&quot;) in `fields` to adjust the columns returned in your results;
-records &lt;- idig_search(rq = list(genus = c(&quot;manis&quot;,&quot;rhinolophus&quot;,&quot;paguma&quot;)),
-                       fields = c(&quot;uuid&quot;, &quot;recordset&quot;, &quot;institutioncode&quot;,
-                                  &quot;genus&quot;, &quot;scientificname&quot;,
-                                  &quot;country&quot;, &quot;data.dwc:year&quot;,
-                                  &quot;data.dwc:collectionCode&quot;, &quot;catalognumber&quot;,
+<p>First, let’s find all the specimen records for the species you are interested in. Do this using the <code>idig_search_records</code> function from the <code>ridigbio</code> package. You can learn more about this function from the <a href="https://github.com/iDigBio/idigbio-search-api/wiki">iDigBio API documentation</a> and <a href="https://cran.r-project.org/web/packages/ridigbio/ridigbio.pdf">ridigbio documentation</a>. In this example, we want to search for specimens identified as being in one of the following genera: <em>Manis</em>, <em>Rhinolophus</em>, or <em>Paguma</em>.</p>
+<pre class="r"><code># Edit the fields (e.g. `genus`) and values (e.g. &quot;manis&quot;) in `list()` 
+# to adjust your query and the fields (e.g. `uuid`) in `fields` to adjust the
+# columns returned in your results
+records &lt;- idig_search_records(rq = list(genus = c(&quot;manis&quot;,
+                                                   &quot;rhinolophus&quot;,
+                                                   &quot;paguma&quot;)),
+                       fields = c(&quot;uuid&quot;,
+                                  &quot;recordset&quot;,
+                                  &quot;institutioncode&quot;,
+                                  &quot;genus&quot;,
+                                  &quot;scientificname&quot;,
+                                  &quot;country&quot;,
+                                  &quot;data.dwc:year&quot;,
+                                  &quot;data.dwc:collectionCode&quot;,
+                                  &quot;catalognumber&quot;,
                                   &quot;data.dwc:preparations&quot;))</code></pre>
 <p>The query above returned 27400 records from the iDigBio Portal. Here is a preview of what our results look like:</p>
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:300px; ">
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 uuid
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 recordset
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 institutioncode
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 genus
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 scientificname
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 country
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 data.dwc:year
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 data.dwc:collectionCode
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 catalognumber
 </th>
-<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+<th style="text-align:left;">
 data.dwc:preparations
 </th>
 </tr>
@@ -700,19 +708,20 @@ NA
 </div>
 <div id="filter-specimen-records-by-preparation-type" class="section level2">
 <h2>Filter specimen records by preparation type</h2>
-<p>These results include <em>all</em> specimen records from the genera of interest, but now we would like to narrow our search to include only specimens that may have cryo-preserved tissue available. We are looking in the <a href="https://dwc.tdwg.org/terms/#dwc:preparations">dwc:preparations</a> field for this information, but there isn’t a controlled vocabulary in use and so the data is not very standard. We can summarize the distinct values present in this field for all 27400 records:</p>
-<pre class="r"><code>#list distinct values for the preparation field
-prepSummary &lt;- records %&gt;% 
+<p>These results include <em>all</em> specimen records from the genera of interest, but now we would like to narrow our search to include only specimens that may have cryo-preserved tissue available. We are looking in the <a href="https://dwc.tdwg.org/terms/#dwc:preparations">dwc:preparations</a> field for this information, but there isn’t a controlled vocabulary in use and so the data is not very standard. We can start by summarizing the distinct values present in this field for all 27400 records:</p>
+<pre class="r"><code># List distinct values for the `preparation` field
+prepsummary &lt;- records %&gt;% 
   group_by(`data.dwc:preparations`) %&gt;% 
   tally()
 
-knitr::kable(prepSummary) %&gt;% 
+# Display `prepsummary` in HTML output
+knitr::kable(prepsummary) %&gt;% 
     kable_styling(bootstrap_options = 
-                         c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
+                         c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;),
                   full_width = FALSE) %&gt;% 
   scroll_box(height = &quot;400px&quot;)</code></pre>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
@@ -3695,19 +3704,17 @@ NA
 </tbody>
 </table>
 </div>
-<div id="select-values-to-filter-on" class="section level3">
-<h3>Select values to filter on</h3>
+<div id="select-values-to-filter-on-and-apply-filter" class="section level3">
+<h3>Select values to filter on and apply filter</h3>
 <p>Based on the distinct values above, it seems like we can use the search terms “froze,” “freeze,” and “tissue” to narrow our results. We do this in the code below.</p>
-<pre class="r"><code>#edit the fields (e.g. &quot;genus&quot;) and values (e.g. &quot;manis&quot;) in `list()` to adjust your query;
-recordsFiltered &lt;- records %&gt;% 
+<pre class="r"><code># Normalize values in `data.dwc:preparations` to be all lowercase; then
+# filter rows that include our search terms
+recordsfiltered &lt;- records %&gt;% 
   mutate(`data.dwc:preparations` = str_to_lower(`data.dwc:preparations`)) %&gt;% 
   filter(grepl('freeze|froze|tissue', `data.dwc:preparations`))</code></pre>
-</div>
-<div id="apply-filter" class="section level3">
-<h3>Apply filter</h3>
 <p>Now we have 560 records, all of which are displayed in the table here:</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:600px; ">
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
@@ -21668,7 +21675,7 @@ formalin, whole; tissues: liver
 </div>
 <p>We can view the preparation distinct values present in our subset of data to see if there are any other values we might want to filter on:</p>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; ">
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
