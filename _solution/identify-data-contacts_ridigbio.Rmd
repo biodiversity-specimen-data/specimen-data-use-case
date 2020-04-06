@@ -1,0 +1,128 @@
+---
+title: "Identify people to contact based on data provided, using R and iDigBio"
+output:
+  html_document:
+    code_folding: show
+    df_print: kable
+---
+
+Code here written by [Erica Krimmel](https://orcid.org/0000-0003-3192-0080). Please see **Use Case: [Find tissue samples](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/identify-data-contacts)** for context.
+
+```{r message=FALSE}
+# Load core libraries; install these packages if you have not already
+library(ridigbio)
+library(tidyverse)
+
+# Load library for making nice HTML output
+library(kableExtra)
+```
+
+We need to start with a data frame that we get by querying the `idig_search_records` function and that includes the field `recordset` (it is included by default). For simplicity sake you can rename your own data frame `records` to most easily reuse the code in this example.
+
+```{r}
+# Get data frame to use as example
+records <- idig_search_records(rq = list(family = "veneridae", 
+                                         county = "los angeles county"))
+```
+
+Our example `records` data frame looks like this:
+
+```{r echo = FALSE, results = 'asis'}
+knitr::kable(head(records)) %>% 
+    kable_styling(bootstrap_options = 
+                         c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "100%")
+```
+
+We will use attributes attached to our `records` data frame to figure out contact information for each of the recordsets providing data here. For background reading on what we mean by attributes, see [Hadley Wikham's explanation in Advanced R](http://adv-r.had.co.nz/Data-structures.html#attributes). We can use attributes here because the `ridigbio` package has structured the results of the `idig_search_records` function in a specific way. The code below will not work as expected with a data frame that did not originate from the `idig_search_records` function.
+
+```{r}
+# Count how many records in the data were contributed by each recordset
+recordtally <- records %>% 
+  group_by(recordset) %>% 
+  tally()
+
+# Get metadata from the attributes of the `records` data frame
+collections <- tibble(collection = attr(records, "attribution")) %>% 
+  # Expand information captured in nested lists
+  hoist(collection, 
+        recordset_uuid = "uuid",
+        recordset_name = "name",
+        recordset_url= "url",
+        contacts = "contacts") %>% 
+  # Get rid of extraneous attribution metadata
+  select(-collection) %>% 
+  # Expand information captured in nested lists
+  unnest_longer(contacts) %>% 
+  # Expand information captured in nested lists
+  unnest_wider(contacts) %>% 
+  # Remove any contacts without an email address listed
+  filter(!is.na(email)) %>% 
+  # Get rid of duplicate contacts within the same recordset
+  distinct() %>% 
+  # Rename some columns
+  rename(contact_role = role, contact_email = email) %>% 
+  # Group first and last names together in the same column
+  unite(col = "contact_name", 
+        first_name, last_name, 
+        sep = " ", 
+        na.rm = TRUE) %>% 
+  # Restructure data frame so that there is one row per recordset
+  group_by(recordset_uuid) %>% 
+  mutate(contact_index = row_number()) %>% 
+  pivot_wider(names_from = contact_index,
+                values_from = c(contact_name, contact_role, contact_email)) %>%
+  # Include how many records in the data were contributed by each recordset
+  left_join(recordtally, by = c("recordset_uuid"="recordset")) %>% 
+  # Rearrange columns so that contact information is grouped by person
+  select(starts_with("recordset"),
+         "recordset_recordtally" = n,
+         contains("1"),
+         contains("2"),
+         contains("3"),
+         contains("4"),
+         contains("5"),
+         contains("6"),
+         contains("7"),
+         contains("8"),
+         contains("9"),
+         contains("10"),
+         everything()) %>% 
+  # Get rid of any rows which don't actually contribute data to `records`;
+  # necessary because the attribute metadata by default includes all recordsets
+  # in iDigBio that match the `idig_search_records` query, even if you filter
+  # or limit those results in your own code
+  filter(recordset_uuid %in% records$recordset)
+```
+
+Our newly constructed `collections` data frame contains contact information for each of the collections (i.e. recordsets) providing data, and looks like this:
+
+```{r echo = FALSE, results = 'asis'}
+knitr::kable(collections) %>% 
+    kable_styling(bootstrap_options = 
+                         c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(height = "400px")
+```
+
+We can contact each collection by looking for the most appropriate person listed in each row, often someone with the role of "collection manager" or "curator." Because each collection publishes this kind of metadata separately, sometimes the contacts listed also include people who are not directly responsible for managing physical specimens, and who may not be able to help you. These people often have roles such as "information architect," "programmer," or "database manager." All contacts listed per recordset have been included here, and it is up to you to decide who to reach out to.
+
+It is frequently helpful to provide your collection contact with a spreadsheet listing the specimen records you are interested in. We can generate these spreadsheets automatically, as shown in the code below.
+
+```{r}
+# Generate a spreadsheet for each recordset containing only the rows provided by
+# that recordset, and named according to the recordset uuid.
+for (i in seq_along(collections$recordset_uuid)) {
+  
+  filename <- paste("records_", collections$recordset_uuid, ".csv",
+                    sep = "", na = "")
+  
+  subset <- records %>% 
+    filter(recordset == collections$recordset_uuid[i])
+  
+  # Save files to your working directory
+  write_csv(subset, filename[i])
+}
+  
+```
+
+For specific research requests there are many ways you could modify the code demonstrated here to be more helpful, e.g. by including additional fields available through `idig_search_records`. See also the ridigbio function `idig_build_attrib` for a summary of recordsets used by records in the data frame, minus contact information.
