@@ -29,3 +29,4 @@
 - Paid online courses: [Datacamp](https://www.datacamp.com) 
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
+- [Twitter for R programmers](https://www.t4rstats.com/)
