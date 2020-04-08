@@ -27,7 +27,6 @@
 - [Software and Data Carpentries](https://carpentries.org/)
 - [Hadley Wickham’s (of the Tidyverse) site with online books](http://hadley.nz/#teaching)
 - [Tidyverse style guide for code](https://style.tidyverse.org/)
-- Paid online courses: [Datacamp](https://www.datacamp.com) 
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
 - [Twitter for R Programmers](https://www.t4rstats.com/)

@@ -1,6 +1,6 @@
 ---
 title: Identify specimen records with suspicious coordinate data
-category: collections management
+category: geospatial
 ---
 
 ### Conditions

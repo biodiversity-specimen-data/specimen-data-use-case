@@ -6,6 +6,8 @@ This document provides a place to post links to code generally related to using 
 
 [Cleaning data in R - Presentation from ESA 2019 Data Help Desk](https://github.com/unmrds/R-data-cleaning)
 
+[Downloading specific columns from iDigBio, GBIF, and bison](https://github.com/mgaynor1/long-winded-scripts/tree/master/OccurrenceData)
+
 ## Links to relevant external projects
 
 **[BiotaPhy](https://biotaphy.github.io/).** Species distribution and biodiversity modeling workflow environment.
