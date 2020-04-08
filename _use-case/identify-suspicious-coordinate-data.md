@@ -13,4 +13,4 @@ category: collections management
 Collection manager would like to have a student intern correct georeferencing that was done poorly. Collection manager would like to be able to hand student a list of specimen catalog numbers that have poorly georeferenced coordinates so that the student can work in the CMS used by the collection and not have to reference data flags on an aggregator.
 
 ### Links to external solutions
--
+- [riDigBio - Geo Coordinate Data Quality](https://github.com/ekrimmel/idigbio-api-dq-geo)
