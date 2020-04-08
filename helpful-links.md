@@ -6,6 +6,7 @@
 - [iDigBio Python library](https://github.com/idigbio/idigbio-python-client/)
 
 ## R packages we like
+
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
 - [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
 - [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database
@@ -28,3 +29,5 @@
 - [Tidyverse style guide for code](https://style.tidyverse.org/)
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
+- [Twitter for R Programmers](https://www.t4rstats.com/)
+- [O'Reilly Head First Programming series](https://ssearch.oreilly.com/?q=Head+First+Programming)
