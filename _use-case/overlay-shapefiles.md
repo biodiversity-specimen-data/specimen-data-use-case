@@ -7,7 +7,6 @@ category: geospatial
 
 1. User has a dataset of specimen records.
 1. User has geospatial data in the form of a shapefile.
-1.
 
 ### Example scenario
 
