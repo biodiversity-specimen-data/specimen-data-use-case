@@ -9,7 +9,9 @@ This repository is an information resource as well as an active co-created produ
 
 All users are encouraged to contribute to this repository! Anyone with a [GitHub account](https://github.com/join) can create and comment on issues, as well as fork this repo and file a pull request with their edits to files. If you would like permission to push to this repo, please [create an issue](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues) and tag the _@biodiversity-specimen-data/maintainers_ team.
 
-We anticipate that users will engage with this repository in several key ways, as described below.
+We anticipate that users will engage with this repository in several key ways, as described in the diagram and text below.
+
+![repo-schema-v3](repo-schema-v3.jpg)
 
 ### View biodiversity specimen data use cases and technical solutions
 
