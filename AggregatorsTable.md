@@ -4,7 +4,7 @@
   
 | Aggregators                              | Focus         | DwC | Web portal                                          | API | R packages   | Python    |
 |------------------------------------------|---------------|-----|-----------------------------------------------------|-----|--------------|-----------|
-| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[^1]</sup>       |           |
+| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[1]</sup>       |           |
 | Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine<sup>[2]</sup>   |           |
 | CNABH                                    | Br            | ✓   | [bryophyteportal.org](https://bryophyteportal.org/portal/)                                 |     |              |           |
 | eBird                                    | Bi            | ✓   | [ebird.org](https://ebird.org/home)                                         | ✓   | Auk<sup>[3]</sup>         | ebird-api |
@@ -21,7 +21,7 @@
 | OBIS                                     | Pm, Am        | ✓   | [obis.org](https://mapper.obis.org/)                                            | ✓   | Robis<sup>[9]</sup>       |           |
 | SEINet North American plant network      | P             | ✓   | [swbiodiversity.org/seinet/](http://swbiodiversity.org/seinet/)                         |     |              |           |
 | SERNEC                                   | P             | ✓   | [sernecportal.org](http://sernecportal.org/portal/)                                    |     |              |           |
-| SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/]((http://symbiota4.acis.ufl.edu/scans/portal/)                |     |              |           |
+| SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/](http://symbiota4.acis.ufl.edu/scans/portal/)                |     |              |           |
 | CNH​                                     | P             | ✓   | [neherbaria.org](http://portal.neherbaria.org/portal/)                                      |     |              |           |
 | Tri-Trophic Thematic Collections Network | P, At         |     | [tcn.amnh.org](http://tcn.amnh.org/)                                        |     |              |           |
 | BISON                                    | P, A          | ✓   | [bison.usgs.gov](https://bison.usgs.gov/#home)                                      | ✓   | Rbison<sup>[10]</sup>     |           |
