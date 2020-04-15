@@ -4,29 +4,28 @@
   
 | Aggregators                              | Focus         | DwC | Web portal                                          | API | R packages   | Python    |
 |------------------------------------------|---------------|-----|-----------------------------------------------------|-----|--------------|-----------|
-| ALA                                      | P, A          | ✓   | [ala.org.au](ala.org.au.e)                                        | ✓   | ALA4R<sup>[^1]</sup>       |           |
+| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[^1]</sup>       |           |
 | Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine<sup>[2]</sup>   |           |
-| CNABH                                    | Br            | ✓   | [bryophyteportal.org](bryophyteportal.org)                                 |     |              |           |
-| eBird                                    | Bi            | ✓   | [ebird.org](ebird.org)                                         | ✓   | Auk<sup>[3]</sup>         | ebird-api |
-| FishNet2                                 | F             | ✓   | [fishnet2.net](fishnet2.net)                                        | ✓   |              | fishnet   |
-| GBIF                                     | B             | ✓   | [gbif.org](gbif.org)                                           | ✓   | Rgbif<sup>[4]</sup>      | pygbif    |
-| iDigBio                                  | B             | ✓   | [idigbio.org](idigbio.org)                                      | ✓   | Ridigbio<sup>[5]</sup>    | idigbio   |
-| iNaturalist                              | P, A          | ✓   | [inaturalist.org](inaturalist.org)                                     | ✓   | Rinat<sup>[6]</sup>       |           |
-| InvertEBase                              | I             | ✓   | [invertebase.org](invertebase.org)                                     |     |              |           |
-| LepNet                                   | Lep           | ✓   | [symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php](symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php) |     |              |           |
-| Lichen Portal                            | Li            | ✓   | [lichenportal.org](lichenportal.org)                                    |     |              |           |
-| Macaulay Library                         | Bi, F, Ap, Mm |     | [macaulaylibrary.org](macaulaylibrary.org)                                 |     | WarbleR<sup>[7]</sup>     |           |
-| Macroalgal Herbarium Consortium Portal​  | Ma            | ✓   | [macroalgae.org](macroalgae.org)                                  |     |              |           |
-| Mid-AtlanticHerbaria Consortium          | P             | ✓   | [midatlanticherbaria.org](midatlanticherbaria.org)                             |     |              |           |
-| MyCoPortal                               | Fu            | ✓   | [mycoportal.org](mycoportal.org)                                      |     | RMyCoPortal<sup>[8]</sup> |           |
-| OBIS                                     | Pm, Am        | ✓   | [obis.org](obis.org)                                            | ✓   | Robis<sup>[9]</sup>       |           |
-| SEINet North American plant network      | P             | ✓   | [swbiodiversity.org/seinet/](swbiodiversity.org/seinet/)                         |     |              |           |
-| SERNEC                                   | P             | ✓   | [sernecportal.org](sernecportal.org)                                    |     |              |           |
-| SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/](symbiota4.acis.ufl.edu/scan/portal/)                |     |              |           |
-| CNH​                                     | P             | ✓   | [neherbaria.org](neherbaria.org)                                      |     |              |           |
-| Tri-Trophic Thematic Collections Network | P, At         |     | [tcn.amnh.org](tcn.amnh.org)                                        |     |              |           |
-| BISON                                    | P, A          | ✓   | [bison.usgs.gov](bison.usgs.gov)                                      | ✓   | Rbison<sup>[10]</sup>     |           |
-| VertNET                                  | V             | ✓   | [vertnet.org](vertnet.org)                                         | ✓   | RVertNet<sup>[11]</sup>   |           |
+| CNABH                                    | Br            | ✓   | [bryophyteportal.org](https://bryophyteportal.org/portal/)                                 |     |              |           |
+| eBird                                    | Bi            | ✓   | [ebird.org](https://ebird.org/home)                                         | ✓   | Auk<sup>[3]</sup>         | ebird-api |
+| FishNet2                                 | F             | ✓   | [fishnet2.net](http://fishnet2.net/)                                        | ✓   |              | fishnet   |
+| GBIF                                     | B             | ✓   | [gbif.org](https://www.gbif.org/)                                           | ✓   | Rgbif<sup>[4]</sup>      | pygbif    |
+| iDigBio                                  | B             | ✓   | [idigbio.org](https://www.idigbio.org/)                                      | ✓   | Ridigbio<sup>[5]</sup>    | idigbio   |
+| iNaturalist                              | P, A          | ✓   | [inaturalist.org](https://www.inaturalist.org)                                     | ✓   | Rinat<sup>[6]</sup>       |           |
+| LepNet                                   | Lep           | ✓   | [symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php](http://symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php) |     |              |           |
+| Lichen Portal                            | Li            | ✓   | [lichenportal.org](https://lichenportal.org/cnalh/#)                                    |     |              |           |
+| Macaulay Library                         | Bi, F, Ap, Mm |     | [macaulaylibrary.org](https://www.macaulaylibrary.org/)                                 |     | WarbleR<sup>[7]</sup>     |           |
+| Macroalgal Herbarium Consortium Portal​  | Ma            | ✓   | [macroalgae.org](https://macroalgae.org/portal/)                                  |     |              |           |
+| Mid-AtlanticHerbaria Consortium          | P             | ✓   | [midatlanticherbaria.org](http://midatlanticherbaria.org/portal/)                             |     |              |           |
+| MyCoPortal                               | Fu            | ✓   | [mycoportal.org](https://mycoportal.org/portal/)                                      |     | RMyCoPortal<sup>[8]</sup> |           |
+| OBIS                                     | Pm, Am        | ✓   | [obis.org](https://mapper.obis.org/)                                            | ✓   | Robis<sup>[9]</sup>       |           |
+| SEINet North American plant network      | P             | ✓   | [swbiodiversity.org/seinet/](http://swbiodiversity.org/seinet/)                         |     |              |           |
+| SERNEC                                   | P             | ✓   | [sernecportal.org](http://sernecportal.org/portal/)                                    |     |              |           |
+| SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/]((http://symbiota4.acis.ufl.edu/scans/portal/)                |     |              |           |
+| CNH​                                     | P             | ✓   | [neherbaria.org](http://portal.neherbaria.org/portal/)                                      |     |              |           |
+| Tri-Trophic Thematic Collections Network | P, At         |     | [tcn.amnh.org](http://tcn.amnh.org/)                                        |     |              |           |
+| BISON                                    | P, A          | ✓   | [bison.usgs.gov](https://bison.usgs.gov/#home)                                      | ✓   | Rbison<sup>[10]</sup>     |           |
+| VertNET                                  | V             | ✓   | [vertnet.org](http://vertnet.org/)                                         | ✓   | RVertNet<sup>[11]</sup>   |           |
 
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
