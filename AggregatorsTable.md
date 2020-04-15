@@ -4,29 +4,29 @@
   
 | Aggregators                              | Focus         | DwC | Web portal                                          | API | R packages   | Python    |
 |------------------------------------------|---------------|-----|-----------------------------------------------------|-----|--------------|-----------|
-| ALA                                      | P, A          | ✓   | [ala.org.au](ala.org.au.e)                                        | ✓   | ALA4R[^1]       |           |
-| Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine[^2]   |           |
+| ALA                                      | P, A          | ✓   | [ala.org.au](ala.org.au.e)                                        | ✓   | ALA4R<sup>[^1]</sup>       |           |
+| Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine<sup>[2]</sup>   |           |
 | CNABH                                    | Br            | ✓   | [bryophyteportal.org](bryophyteportal.org)                                 |     |              |           |
-| eBird                                    | Bi            | ✓   | [ebird.org](ebird.org)                                         | ✓   | Auk[^3]         | ebird-api |
+| eBird                                    | Bi            | ✓   | [ebird.org](ebird.org)                                         | ✓   | Auk<sup>[3]</sup>         | ebird-api |
 | FishNet2                                 | F             | ✓   | [fishnet2.net](fishnet2.net)                                        | ✓   |              | fishnet   |
-| GBIF                                     | B             | ✓   | [gbif.org](gbif.org)                                           | ✓   | Rgbif[^4]      | pygbif    |
-| iDigBio                                  | B             | ✓   | [idigbio.org](idigbio.org)                                      | ✓   | Ridigbio[^5]    | idigbio   |
-| iNaturalist                              | P, A          | ✓   | [inaturalist.org](inaturalist.org)                                     | ✓   | Rinat[^6]       |           |
+| GBIF                                     | B             | ✓   | [gbif.org](gbif.org)                                           | ✓   | Rgbif<sup>[4]</sup>      | pygbif    |
+| iDigBio                                  | B             | ✓   | [idigbio.org](idigbio.org)                                      | ✓   | Ridigbio<sup>[5]</sup>    | idigbio   |
+| iNaturalist                              | P, A          | ✓   | [inaturalist.org](inaturalist.org)                                     | ✓   | Rinat<sup>[6]</sup>       |           |
 | InvertEBase                              | I             | ✓   | [invertebase.org](invertebase.org)                                     |     |              |           |
 | LepNet                                   | Lep           | ✓   | [symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php](symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php) |     |              |           |
 | Lichen Portal                            | Li            | ✓   | [lichenportal.org](lichenportal.org)                                    |     |              |           |
-| Macaulay Library                         | Bi, F, Ap, Mm |     | [macaulaylibrary.org](macaulaylibrary.org)                                 |     | WarbleR[^7]     |           |
+| Macaulay Library                         | Bi, F, Ap, Mm |     | [macaulaylibrary.org](macaulaylibrary.org)                                 |     | WarbleR<sup>[7]</sup>     |           |
 | Macroalgal Herbarium Consortium Portal​  | Ma            | ✓   | [macroalgae.org](macroalgae.org)                                  |     |              |           |
 | Mid-AtlanticHerbaria Consortium          | P             | ✓   | [midatlanticherbaria.org](midatlanticherbaria.org)                             |     |              |           |
-| MyCoPortal                               | Fu            | ✓   | [mycoportal.org](mycoportal.org)                                      |     | RMyCoPortal[^8] |           |
-| OBIS                                     | Pm, Am        | ✓   | [obis.org](obis.org)                                            | ✓   | Robis[^9]       |           |
+| MyCoPortal                               | Fu            | ✓   | [mycoportal.org](mycoportal.org)                                      |     | RMyCoPortal<sup>[8]</sup> |           |
+| OBIS                                     | Pm, Am        | ✓   | [obis.org](obis.org)                                            | ✓   | Robis<sup>[9]</sup>       |           |
 | SEINet North American plant network      | P             | ✓   | [swbiodiversity.org/seinet/](swbiodiversity.org/seinet/)                         |     |              |           |
 | SERNEC                                   | P             | ✓   | [sernecportal.org](sernecportal.org)                                    |     |              |           |
 | SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/](symbiota4.acis.ufl.edu/scan/portal/)                |     |              |           |
 | CNH​                                     | P             | ✓   | [neherbaria.org](neherbaria.org)                                      |     |              |           |
 | Tri-Trophic Thematic Collections Network | P, At         |     | [tcn.amnh.org](tcn.amnh.org)                                        |     |              |           |
-| BISON                                    | P, A          | ✓   | [bison.usgs.gov](bison.usgs.gov)                                      | ✓   | Rbison[^10]     |           |
-| VertNET                                  | V             | ✓   | [vertnet.org](vertnet.org)                                         | ✓   | RVertNet[^11]   |           |
+| BISON                                    | P, A          | ✓   | [bison.usgs.gov](bison.usgs.gov)                                      | ✓   | Rbison<sup>[10]</sup>     |           |
+| VertNET                                  | V             | ✓   | [vertnet.org](vertnet.org)                                         | ✓   | RVertNet<sup>[11]</sup>   |           |
 
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
@@ -49,7 +49,7 @@
   
 [9]: [Provoost P, Bosch S. 2019. “robis: R Client to access data from the OBIS API.” Ocean Biogegraphic Information System. Intergovernmental Oceanographic Commision of UNESCO. R package version 2.1.0. (14 May 2019; https://cran.r-project.org/package-robis)](https://cran.r-project.org/package-robis). 
   
-[10]: [Chamberlain S. 2019. rbison: Interface to the ‘USGS’ ‘BISON’ API. R package version 0.8.0. (14 May 2019; https://github.com/ropensci/rbison)] 
+[10]: [Chamberlain S. 2019. rbison: Interface to the ‘USGS’ ‘BISON’ API. R package version 0.8.0. (14 May 2019; https://github.com/ropensci/rbison)](https://github.com/ropensci/rbison). 
   
-[11]: Chamberlain S. 2018. rvertnet: Search 'Vertnet', a 'Database' of Vertebrate Specimen Records. R package version 0.7.0. (14 May 2019; https://CRAN.R-project.org/package=rvertnet). 
+[11]: [Chamberlain S. 2018. rvertnet: Search 'Vertnet', a 'Database' of Vertebrate Specimen Records. R package version 0.7.0. (14 May 2019; https://CRAN.R-project.org/package=rvertnet)](https://CRAN.R-project.org/package=rvertnet).  
 
