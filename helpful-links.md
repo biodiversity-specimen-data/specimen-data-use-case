@@ -24,12 +24,13 @@
 - [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html): geospatial analysis
 - [knitr](https://yihui.org/knitr/): report generation from RMarkdown code
 - [packrat](https://rstudio.github.io/packrat/): managing packages
+- [rOpenSci](https://ropensci.org/packages/): "Our packages are carefully vetted, staff- and community-contributed R software tools that lower barriers to working with scientific data sources and data that support research applications on the web."
 
 
 ## Links for more learning
 
 - [Twitter for R programmers](https://www.t4rstats.com/): how to engage with the R community via Twitter
-- [Software and Data Carpentries](https://carpentries.org/): "The Carpentries teaches foundational coding, and data science skills to researchers worldwide."  The organization hosts workshops and makes its lesson plans available under CC for self-learning and reuse. The links below are their main lesssons but you can also browse the Github orgs for more.
+- [The Carpentries](https://carpentries.org/): "The Carpentries teaches foundational coding, and data science skills to researchers worldwide."  The organization hosts workshops and makes its lesson plans available under CC for self-learning and reuse. The links below are their main lesssons but you can also browse the Github orgs for more.
   - Software Carpentry lessons: https://software-carpentry.org/lessons/
   - Data Carpentry lessons: https://datacarpentry.org/lessons/
   - Library Carpentry lessons: https://librarycarpentry.org/lessons/
