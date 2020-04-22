@@ -3,7 +3,7 @@ title: Welcome
 ---
 
 <p>Browse use cases sorted by category below. See <a href="{{ '/helpful-links' | relative_url }}">helpful links</a> and <a href="{{ '/other-code-examples' | relative_url }}">other code examples</a> for additional information.</p>
-
+<p>At the beginning of each session we will host a 5-10 minute demo, followed by an open agenda. If you know you have a question or topic that you'd like to focus on, feel free to <a href = "bit.ly/2wypVsY"> sign up ahead of time </a> to ensure that it is addressed in a particular session. Participants are welcome to drop by for only part of the hour. </p>
 {% assign mycats = site.use-case | group_by: 'category' | sort: 'category' | reverse %}
 {% for cat in mycats %}
 <h3>{{ cat.name | capitalize }}</h3>
