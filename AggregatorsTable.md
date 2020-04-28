@@ -1,7 +1,7 @@
 # Biodiversity Record Aggregators   
 ML Gaynor - Updated April 2020.
     
-## **Table 1.**    
+## **Table of Biodiversity Record Aggregators**    
 Overview of a subset of biodiversity occurrence record aggregators. If a collection is stored or available in Darwin Core (DwC) format, a checkmark is indicated. Checkmarks also indicate that an Application Programming Interface (API) is available, R packages, or Python libraries are available, which streamlines access to data and standardizes formatting.
   
   
