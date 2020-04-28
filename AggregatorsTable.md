@@ -4,7 +4,7 @@
   
 | Aggregators                              | Focus         | DwC | Web portal                                          | API | R packages   | Python    |
 |------------------------------------------|---------------|-----|-----------------------------------------------------|-----|--------------|-----------|
-| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[1]</sup>       |           |
+| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[1](#number-1)</sup>       |           |
 | Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine<sup>[2]</sup>   |           |
 | CNABH                                    | Br            | ✓   | [bryophyteportal.org](https://bryophyteportal.org/portal/)                                 |     |              |           |
 | eBird                                    | Bi            | ✓   | [ebird.org](https://ebird.org/home)                                         | ✓   | Auk<sup>[3]</sup>         | ebird-api |
@@ -30,7 +30,7 @@
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
 **References**.   
-[1]: [Raymond B, VanDerWal J, Belbin L. 2019. ALA4R: Atlas of Living Australia (ALA) data and resources in R. (14 May 2019; https://github.com/AtlasOfLivingAustralia/ALA4R)](https://github.com/AtlasOfLivingAustralia/ALA4R). 
+[number-1](): [Raymond B, VanDerWal J, Belbin L. 2019. ALA4R: Atlas of Living Australia (ALA) data and resources in R. (14 May 2019; https://github.com/AtlasOfLivingAustralia/ALA4R)](https://github.com/AtlasOfLivingAustralia/ALA4R). 
   
 [2]: [Ram K. 2017. ecoengine: Programmatic Interface to the Web Service Methods Provided by UC Berkeley's Natural History Data. R package version 1.11.0. (14 May 2019; https://CRAN.R-project.org/package=ecoengine)](https://CRAN.R-project.org/package=ecoengine).  
   
