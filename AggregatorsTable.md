@@ -1,5 +1,7 @@
-
-# **Table 1.**   
+# Biodiversity Record Aggregators   
+ML Gaynor - Updated April 2020.
+    
+## **Table 1.**    
 Overview of a subset of biodiversity occurrence record aggregators. If a collection is stored or available in Darwin Core (DwC) format, a checkmark is indicated. Checkmarks also indicate that an Application Programming Interface (API) is available, R packages, or Python libraries are available, which streamlines access to data and standardizes formatting.
   
   
@@ -30,8 +32,9 @@ Overview of a subset of biodiversity occurrence record aggregators. If a collect
 
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
-# **References**. 
-#### 1  [Raymond B, VanDerWal J, Belbin L. 2019. ALA4R: Atlas of Living Australia (ALA) data and resources in R. (14 May 2019; https://github.com/AtlasOfLivingAustralia/ALA4R)](https://github.com/AtlasOfLivingAustralia/ALA4R). 
+## **References**. 
+#### 1    
+[Raymond B, VanDerWal J, Belbin L. 2019. ALA4R: Atlas of Living Australia (ALA) data and resources in R. (14 May 2019; https://github.com/AtlasOfLivingAustralia/ALA4R)](https://github.com/AtlasOfLivingAustralia/ALA4R). 
   
 #### 2  
 [Ram K. 2017. ecoengine: Programmatic Interface to the Web Service Methods Provided by UC Berkeley's Natural History Data. R package version 1.11.0. (14 May 2019; https://CRAN.R-project.org/package=ecoengine)](https://CRAN.R-project.org/package=ecoengine). |
