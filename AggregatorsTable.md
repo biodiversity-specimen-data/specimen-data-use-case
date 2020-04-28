@@ -1,34 +1,36 @@
 # Biodiversity Record Aggregators   
 ML Gaynor - Updated April 2020.
+
+Are we missing a biodiversity aggregator? Let us know!
     
 ## **Table of Biodiversity Record Aggregators**    
-Overview of a subset of biodiversity occurrence record aggregators. If a collection is stored or available in Darwin Core (DwC) format, a checkmark is indicated. Checkmarks also indicate that an Application Programming Interface (API) is available, R packages, or Python libraries are available, which streamlines access to data and standardizes formatting.
+Overview of a subset of biodiversity occurrence record aggregators, webportals are linked in the aggregators column. If a collection is stored or available in Darwin Core (DwC) format, a checkmark is indicated. Checkmarks also indicate that an Application Programming Interface (API) is available, R packages, or Python libraries are available, which streamlines access to data and standardizes formatting.
   
   
-| Aggregators                              | Focus         | DwC | Web portal                                          | API | R packages   | Python    |
-|------------------------------------------|---------------|-----|-----------------------------------------------------|-----|--------------|-----------|
-| ALA                                      | P, A          | ✓   | [ala.org.au](https://www.ala.org.au/)                                        | ✓   | ALA4R<sup>[1](<#1>)</sup>       |           |
-| Berkeley Ecoengine                       | P, A          | ✓   |                                                     | ✓   | Ecoengine<sup>[2](<#2>)</sup>   |           |
-| CNABH                                    | Br            | ✓   | [bryophyteportal.org](https://bryophyteportal.org/portal/)                                 |     |              |           |
-| eBird                                    | Bi            | ✓   | [ebird.org](https://ebird.org/home)                                         | ✓   | Auk<sup>[3](<#3>)</sup>         | ebird-api |
-| FishNet2                                 | F             | ✓   | [fishnet2.net](http://fishnet2.net/)                                        | ✓   |              | fishnet   |
-| GBIF                                     | B             | ✓   | [gbif.org](https://www.gbif.org/)                                           | ✓   | Rgbif<sup>[4](<#4>)</sup>      | pygbif    |
-| iDigBio                                  | B             | ✓   | [idigbio.org](https://www.idigbio.org/)                                      | ✓   | Ridigbio<sup>[5](<#5>)</sup>    | idigbio   |
-| iNaturalist                              | P, A          | ✓   | [inaturalist.org](https://www.inaturalist.org)                                     | ✓   | Rinat<sup>[6](<#6>)</sup>       |           |
-| LepNet                                   | Lep           | ✓   | [symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php](http://symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php) |     |              |           |
-| Lichen Portal                            | Li            | ✓   | [lichenportal.org](https://lichenportal.org/cnalh/#)                                    |     |              |           |
-| Macaulay Library                         | Bi, F, Ap, Mm |     | [macaulaylibrary.org](https://www.macaulaylibrary.org/)                                 |     | WarbleR<sup>[7](<#7>)</sup>     |           |
-| Macroalgal Herbarium Consortium Portal​  | Ma            | ✓   | [macroalgae.org](https://macroalgae.org/portal/)                                  |     |              |           |
-| Mid-AtlanticHerbaria Consortium          | P             | ✓   | [midatlanticherbaria.org](http://midatlanticherbaria.org/portal/)                             |     |              |           |
-| MyCoPortal                               | Fu            | ✓   | [mycoportal.org](https://mycoportal.org/portal/)                                      |     | RMyCoPortal<sup>[8](<#8>)</sup> |           |
-| OBIS                                     | Pm, Am        | ✓   | [obis.org](https://mapper.obis.org/)                                            | ✓   | Robis<sup>[9](<#9>)</sup>       |           |
-| SEINet North American plant network      | P             | ✓   | [swbiodiversity.org/seinet/](http://swbiodiversity.org/seinet/)                         |     |              |           |
-| SERNEC                                   | P             | ✓   | [sernecportal.org](http://sernecportal.org/portal/)                                    |     |              |           |
-| SCAN                                     | At            | ✓   | [symbiota4.acis.ufl.edu/scan/portal/](http://symbiota4.acis.ufl.edu/scans/portal/)                |     |              |           |
-| CNH​                                     | P             | ✓   | [neherbaria.org](http://portal.neherbaria.org/portal/)                                      |     |              |           |
-| Tri-Trophic Thematic Collections Network | P, At         |     | [tcn.amnh.org](http://tcn.amnh.org/)                                        |     |              |           |
-| BISON                                    | P, A          | ✓   | [bison.usgs.gov](https://bison.usgs.gov/#home)                                      | ✓   | Rbison<sup>[10](<#10>)</sup>     |           |
-| VertNET                                  | V             | ✓   | [vertnet.org](http://vertnet.org/)                                         | ✓   | RVertNet<sup>[11](<#11>)</sup>   |           |
+| Aggregators                              | Focus         | DwC | API | R packages   | Python    |
+|------------------------------------------|---------------|-----|-----|--------------|-----------|
+| [ALA - Atlas of Living Australia](https://www.ala.org.au/) | P, A   | ✓   | ✓   | ALA4R<sup>[1](<#1>)</sup>  |       |
+| Berkeley Ecoengine                       | P, A          | ✓  |  ✓   | Ecoengine<sup>[2](<#2>)</sup>   |           |
+| [CNABH](https://bryophyteportal.org/portal/)  | Br       | ✓   |     |             |              |           
+| [eBird](https://ebird.org/home)  | Bi            | ✓  | ✓   | Auk<sup>[3](<#3>)</sup>         | ebird-api |
+| [FishNet2](http://fishnet2.net/) | F    | ✓  | ✓   |              | fishnet   |
+| [GBIF](https://www.gbif.org/)   | B             | ✓   | ✓   | Rgbif<sup>[4](<#4>)</sup>      | pygbif    |
+| [iDigBio](https://www.idigbio.org/)  | B             | ✓   | ✓   | Ridigbio<sup>[5](<#5>)</sup>    | idigbio   |
+| [iNaturalist](https://www.inaturalist.org) | P, A          | ✓   | ✓   | Rinat<sup>[6](<#6>)</sup>       |           |
+| [LepNet](http://symbiota4.acis.ufl.edu/scan/lepnet/portal/index.php) | Lep           | ✓   |   |              |           |
+| [Lichen Portal](https://lichenportal.org/cnalh/#) | Li            | ✓   |     |              |  |
+| [Macaulay Library](https://www.macaulaylibrary.org/)  | Bi, F, Ap, Mm |     |    |  WarbleR<sup>[7](<#7>)</sup>     |      |
+| [Macroalgal Herbarium Consortium Portal](https://macroalgae.org/portal/)  | Ma   | ✓  |     |              |           |
+| [Mid-AtlanticHerbaria Consortium](http://midatlanticherbaria.org/portal/) | P    | ✓   |    |   |           |
+| [MyCoPortal](https://mycoportal.org/portal/)| Fu            | ✓   |     | RMyCoPortal<sup>[8](<#8>)</sup> |           |
+| [OBIS](https://mapper.obis.org/)| Pm, Am        | ✓  | ✓   | Robis<sup>[9](<#9>)</sup>       |           |
+| [SEINet North American plant network](http://swbiodiversity.org/seinet/) | P             | ✓   |     |              |      |
+| [SERNEC](http://sernecportal.org/portal/)| P | ✓ |     |              |           |
+| [SCAN](http://symbiota4.acis.ufl.edu/scans/portal/)| At |  ✓  |      |              |           |
+| [CNH](http://portal.neherbaria.org/portal/)| P | ✓ |     |              |           |
+| [Tri-Trophic Thematic Collections Network](http://tcn.amnh.org/) | P, At |     |     |              |           |
+| [BISON](https://bison.usgs.gov/#home) | P, A | ✓  | ✓   | Rbison<sup>[10](<#10>)</sup>     |           |
+| [VertNET](http://vertnet.org/)| V | ✓ | ✓   | RVertNet<sup>[11](<#11>)</sup>   |           |
 
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
