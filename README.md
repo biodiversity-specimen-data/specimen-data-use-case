@@ -1,15 +1,17 @@
 # specimen-data-use-case
 
 This repository serves as a place to **collect specific use cases of biodiversity specimen data**, such as records found on the [iDigBio Portal](https://www.idigbio.org/portal/) or on [GBIF](https://www.gbif.org/). The primary goal of this repository is to document use cases conceptually, and where possible, to link use cases to technical solutions maintained either within or external to this repository.
- 
-### iDigBio API User Group (R-based)
+
+## iDigBio API User Group (R-based)
+
 This repository supports the products of the [iDigBio API User Group (R-based)](https://www.idigbio.org/wiki/index.php/IDigBio_Working_Groups#API_User_Group_.28R-based.29), which focuses on using tools such as the iDigBio API (Application Programming Interface) to work with biodiversity occurrence data in R for the purposes of both collections management, e.g. to review specimen data quality issues, and downstream research, e.g. to facilitate reproducible and reusable methods. 
 
-#### Join us!
+### Join us!
+
 Community members of all backgrounds (collections staff, researchers, IT, etc.) and levels of programming experience (including R novice) are encouraged to use this working group as a place to discover and discuss API data access, issues, and solutions, as well as to build a dispersed network of API power users. The working group will maintain relevant code for reuse here in this GitHub repository. If you would like to know more about the working group, please attend one of our informal ["drop-in hours" webinars](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based).
 
 
-### Drop-in hours 
+### Drop-in hours
 
 Check-out our ["drop-in hours"](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based). At the beginning of each session we will host a 5-10 minute demo, followed by an open agenda. If you know you have a question or topic that you'd like to focus on, feel free to sign up ahead of time on this [google doc](bit.ly/2wypVsY) to ensure that it is addressed in a particular session. Participants are welcome to drop by for only part of the hour. 
 
