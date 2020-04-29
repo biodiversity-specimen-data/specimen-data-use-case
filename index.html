@@ -10,6 +10,7 @@ title: Welcome
 <h3> Sources for specimen data </h3>
 <p>Interested in where you can get biodiversity specimen data, we complied a table of <a href="{{ '/AggregatorsTable' | relative_url }}">biodiversity data aggregators here!</a></p> 
 
+<h2> Use-case examples </h2>
 {% assign mycats = site.use-case | group_by: 'category' | sort: 'category' | reverse %}
 {% for cat in mycats %}
 <h3>{{ cat.name | capitalize }}</h3>
