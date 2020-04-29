@@ -31,6 +31,8 @@ Overview of a subset of biodiversity occurrence record aggregators, webportals a
 | [Tri-Trophic Thematic Collections Network](http://tcn.amnh.org/) | P, At |     |     |              |           |
 | [BISON](https://bison.usgs.gov/#home) | P, A | ✓  | ✓   | Rbison<sup>[10](<#10>)</sup>     |           |
 | [VertNET](http://vertnet.org/)| V | ✓ | ✓   | RVertNet<sup>[11](<#11>)</sup>   |           |
+| [Canadensys](http://www.canadensys.net/)| B | ✓ | ✓ | | |
+| [Chinese virtual herbarium](http://www.cvh.ac.cn/en) | P | | | 
 
 *Abbreviations:* *Aggregators*- ALA (Atlas of Living Australia), CNABH (Consortium of North American Bryophyte Herbaria), GBIF (Global Biodiversity Information Facility), LepNet (Lepidoptera of North America Network), MyCoPortal (Mycology Collections data Portal), OBIS (Ocean Biogeographic Information System), SERNEC (Southeast Regional Network of Expertise and Collections), SCAN (Symbiota Collections of Arthropods Network), CNH (Consortium of Northeastern Herbaria), BISON (Biodiversity Information Serving Our Nation). *Focus*-A (Animals), Am (Marine Plants), Ap (amphibians), At (Arthropod​), B (Broad taxonomically), Br (Bryophytes), Bi (Birds), F (Fish), Fu (Fungus​), I (invertebrates), Lep (Lepidoptera​), Li (Lichen​), Ma (macroalgae) Mm (Mammals), P (Plants), Pm (Marine plants), V (Vertebrates).
   
