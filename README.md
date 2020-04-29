@@ -1,17 +1,32 @@
 # specimen-data-use-case
 
 This repository serves as a place to **collect specific use cases of biodiversity specimen data**, such as records found on the [iDigBio Portal](https://www.idigbio.org/portal/) or on [GBIF](https://www.gbif.org/). The primary goal of this repository is to document use cases conceptually, and where possible, to link use cases to technical solutions maintained either within or external to this repository.
+ 
+### iDigBio API User Group (R-based)
+This repository supports the products of the [iDigBio API User Group (R-based)](https://www.idigbio.org/wiki/index.php/IDigBio_Working_Groups#API_User_Group_.28R-based.29), which focuses on using tools such as the iDigBio API (Application Programming Interface) to work with biodiversity occurrence data in R for the purposes of both collections management, e.g. to review specimen data quality issues, and downstream research, e.g. to facilitate reproducible and reusable methods. 
 
-This repository supports the products of the [iDigBio API User Group (R-based)](https://www.idigbio.org/wiki/index.php/IDigBio_Working_Groups#API_User_Group_.28R-based.29), which focuses on using tools such as the iDigBio API (Application Programming Interface) to work with biodiversity occurrence data in R for the purposes of both collections management, e.g. to review specimen data quality issues, and downstream research, e.g. to facilitate reproducible and reusable methods. Community members of all backgrounds (collections staff, researchers, IT, etc.) and levels of programming experience (including R novice) are encouraged to use this working group as a place to discover and discuss API data access, issues, and solutions, as well as to build a dispersed network of API power users. The working group will maintain relevant code for reuse here in this GitHub repository. If you would like to know more about the working group, please attend one of our informal ["office hour" webinars](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based).
+#### Join us!
+Community members of all backgrounds (collections staff, researchers, IT, etc.) and levels of programming experience (including R novice) are encouraged to use this working group as a place to discover and discuss API data access, issues, and solutions, as well as to build a dispersed network of API power users. The working group will maintain relevant code for reuse here in this GitHub repository. If you would like to know more about the working group, please attend one of our informal ["drop-in hours" webinars](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based).
+
+
+### Drop-in hours 
+
+Check-out our ["drop-in hours"](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based). At the beginning of each session we will host a 5-10 minute demo, followed by an open agenda. If you know you have a question or topic that you'd like to focus on, feel free to sign up ahead of time on this [google doc](bit.ly/2wypVsY) to ensure that it is addressed in a particular session. Participants are welcome to drop by for only part of the hour. 
+
 
 ## How to use this repository
-This repository is an information resource as well as an active co-created product. Users whose primary need is information gathering may prefer to view the repository via its [prettified GitHub Pages website](https://biodiversity-specimen-data.github.io/specimen-data-use-case/).
 
-All users are encouraged to contribute to this repository! Anyone with a [GitHub account](https://github.com/join) can create and comment on issues, as well as fork this repo and file a pull request with their edits to files. If you would like permission to push to this repo, please [create an issue](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues) and tag the _@biodiversity-specimen-data/maintainers_ team.
+This repository is an information resource as well as an active co-created product. Users whose primary need is information gathering may prefer to view the repository via its **[prettified GitHub Pages website](https://biodiversity-specimen-data.github.io/specimen-data-use-case/)**.
+
+All users are encouraged to contribute to this repository! Anyone with a [GitHub account](https://github.com/join) can create and comment on issues, as well as fork this repo and file a pull request with their edits to files. **If you would like permission to push to this repo, please [create an issue](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues) and tag the _@biodiversity-specimen-data/maintainers_ team.**
 
 We anticipate that users will engage with this repository in several key ways, as described in the diagram and text below.
 
 ![repo-schema-v3](repo-schema-v3.jpg)
+
+### Sources for specimen data 
+
+Interested in where you can get biodiversity specimen data, we complied a table of [biodiversity data aggregators here](https://biodiversity-specimen-data.github.io/specimen-data-use-case/AggregatorsTable)!
 
 ### View biodiversity specimen data use cases and technical solutions
 
