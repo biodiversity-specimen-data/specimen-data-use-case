@@ -2,6 +2,10 @@
 ML Gaynor - Updated April 2020.
 
 Are we missing a biodiversity aggregator? Let us know!
+
+**Warning** - Some of these repositories feed into each other, duplicate records may exsist among data aggregators. Methods to detect and remove duplicates for different research applications are avaliable and/or in development. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s important to note some of these feed off eachother. The head of BISON spoke at UF once and showed this slide <a href="https://t.co/4uCjTZI9bU">pic.twitter.com/4uCjTZI9bU</a></p>&mdash; Shawn Taylor (@dataEcologist) <a href="https://twitter.com/dataEcologist/status/1255344750682611713?ref_src=twsrc%5Etfw">April 29, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     
 ## **Table of Biodiversity Record Aggregators**    
 Overview of a subset of biodiversity occurrence record aggregators, webportals are linked in the aggregators column. If a collection is stored or available in Darwin Core (DwC) format, a checkmark is indicated. Checkmarks also indicate that an Application Programming Interface (API) is available, R packages, or Python libraries are available, which streamlines access to data and standardizes formatting.
