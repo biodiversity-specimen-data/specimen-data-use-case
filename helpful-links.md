@@ -5,29 +5,55 @@
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [iDigBio Python library](https://github.com/idigbio/idigbio-python-client/)
 
+<<<<<<< HEAD
 ## R packages we like
 
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
+=======
+## R packages for biodiversity informatics
+
+- [iDigBio R package](https://github.com/idigbio/ridigbio)
+- [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
+>>>>>>> 16e038795f0c9c1b5fb078d9101da3b39d891ce1
 - [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
 - [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database
-- [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
-- [checkpoint](https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html): managing packages for reproducibility
-- [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
 - [dismo](https://cran.r-project.org/web/packages/dismo/index.html): species distribution modeling
-- [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html): geospatial analysis
-- [knitr](https://yihui.org/knitr/): report generation from RMarkdown code
-- [packrat](https://rstudio.github.io/packrat/): managing packages
 - [scrubr](https://docs.ropensci.org/scrubr/): biodiversity occurrence data quality
-- [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
 
+## Other Important R packages
+- **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
+- [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
+- [checkpoint](https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html): managing packages for reproducibility
+- [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
+- [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html): geospatial analysis
+- [knitr](https://yihui.org/knitr/): report generation from RMarkdown code
+- [packrat](https://rstudio.github.io/packrat/): managing packages
+- [rOpenSci](https://ropensci.org/packages/): "Our packages are carefully vetted, staff- and community-contributed R software tools that lower barriers to working with scientific data sources and data that support research applications on the web."
+
+
 ## Links for more learning
 
-- [Software and Data Carpentries](https://carpentries.org/)
+- [Twitter for R programmers](https://www.t4rstats.com/): how to engage with the R community via Twitter
+- [The Carpentries](https://carpentries.org/): "The Carpentries teaches foundational coding, and data science skills to researchers worldwide."  The organization hosts workshops and makes its lesson plans available under CC for self-learning and reuse. The links below are their main lesssons but you can also browse the Github orgs for more.
+  - Software Carpentry lessons: https://software-carpentry.org/lessons/
+  - Data Carpentry lessons: https://datacarpentry.org/lessons/
+  - Library Carpentry lessons: https://librarycarpentry.org/lessons/
 - [Hadley Wickham’s (of the Tidyverse) site with online books](http://hadley.nz/#teaching)
 - [Tidyverse style guide for code](https://style.tidyverse.org/)
+<<<<<<< HEAD
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
 - [Twitter for R Programmers](https://www.t4rstats.com/)
 - [O'Reilly Head First Programming series](https://ssearch.oreilly.com/?q=Head+First+Programming)
+=======
+- Paid online courses: [Datacamp](https://www.datacamp.com) 
+
+### Advanced Topics
+
+How do you ensure your code is doing what it is supposed to be doing?  Code tests.
+
+- [Unit testing for R](https://testthat.r-lib.org/)
+- [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
+>>>>>>> 16e038795f0c9c1b5fb078d9101da3b39d891ce1
