@@ -5,16 +5,14 @@
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [iDigBio Python library](https://github.com/idigbio/idigbio-python-client/)
 
-<<<<<<< HEAD
 ## R packages we like
 
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
-=======
+
 ## R packages for biodiversity informatics
 
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
->>>>>>> 16e038795f0c9c1b5fb078d9101da3b39d891ce1
 - [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
 - [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database
 - [dismo](https://cran.r-project.org/web/packages/dismo/index.html): species distribution modeling
@@ -23,6 +21,7 @@
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
 
 ## Other Important R packages
+
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
 - [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
 - [checkpoint](https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html): managing packages for reproducibility
@@ -42,13 +41,11 @@
   - Library Carpentry lessons: https://librarycarpentry.org/lessons/
 - [Hadley Wickham’s (of the Tidyverse) site with online books](http://hadley.nz/#teaching)
 - [Tidyverse style guide for code](https://style.tidyverse.org/)
-<<<<<<< HEAD
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
 - [Twitter for R Programmers](https://www.t4rstats.com/)
 - [O'Reilly Head First Programming series](https://ssearch.oreilly.com/?q=Head+First+Programming)
-=======
-- Paid online courses: [Datacamp](https://www.datacamp.com) 
+- Paid online courses: [Datacamp](https://www.datacamp.com)
 
 ### Advanced Topics
 
@@ -56,4 +53,3 @@ How do you ensure your code is doing what it is supposed to be doing?  Code test
 
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
->>>>>>> 16e038795f0c9c1b5fb078d9101da3b39d891ce1
