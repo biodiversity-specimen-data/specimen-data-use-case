@@ -2,7 +2,7 @@ This document provides a place to post links to code generally related to using 
 
 ## Links to external code examples
 
-[Using the GloBi API via R to get species interaction data](https://github.com/ParasiteTracker/TPT-GloBI-R-Demo).
+[Using the GloBi API via R to get species interaction data](https://github.com/ParasiteTracker/TPT-GloBI-R-Demo)
 
 [Cleaning data in R - Presentation from ESA 2019 Data Help Desk](https://github.com/unmrds/R-data-cleaning)
 

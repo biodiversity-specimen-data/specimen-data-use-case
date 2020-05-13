@@ -5,12 +5,13 @@ category: geospatial
 
 ### Conditions
 
-1. User needs to...
-1. Output should be a spreadsheet.
+1. User needs to find records where the original coordinate data has been altered by the data aggregator.
+1. User needs to visualize results on a map.
+1. User wants to explore additional facets of these records, e.g. what collections within an institution they belong to.
 
 ### Example scenario
 
-Collection manager would like to have a student intern correct georeferencing that was done poorly. Collection manager would like to be able to hand student a list of specimen catalog numbers that have poorly georeferenced coordinates so that the student can work in the CMS used by the collection and not have to reference data flags on an aggregator.
+Institutional data manager would like to identify how well different collections are doing on their georeferencing projects. Data manager wants to understand this from both a record-level and collection-level perspective, and needs to be able to show collection managers the affect that coordinate data quality issues have on a specimen record.
 
 ### Links to external solutions
 - [riDigBio - Geo Coordinate Data Quality](https://github.com/ekrimmel/idigbio-api-dq-geo)

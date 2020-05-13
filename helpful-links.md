@@ -9,7 +9,7 @@
 
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
 
-## R packages for biodiversity informatics
+### R packages for biodiversity informatics
 
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
@@ -20,9 +20,8 @@
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
 
-## Other Important R packages
+### Other Important R packages
 
-- **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
 - [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
 - [checkpoint](https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html): managing packages for reproducibility
 - [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
@@ -45,11 +44,11 @@
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
 - [Twitter for R Programmers](https://www.t4rstats.com/)
 - [O'Reilly Head First Programming series](https://ssearch.oreilly.com/?q=Head+First+Programming)
-- Paid online courses: [Datacamp](https://www.datacamp.com)
+- [Datacamp](https://www.datacamp.com): paid online courses
 
 ### Advanced Topics
 
-How do you ensure your code is doing what it is supposed to be doing?  Code tests.
+How do you ensure your code is doing what it is supposed to be doing?  Code tests. See the following for more:
 
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
