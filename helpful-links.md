@@ -10,12 +10,13 @@
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
 
 ### R packages for biodiversity informatics
-
+Downloading data
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
 - [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
 - [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database
-- [dismo](https://cran.r-project.org/web/packages/dismo/index.html): species distribution modeling
+- [lubridate](https://lubridate.tidyverse.org/): for cleaning and converting dates
+- [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
 - [scrubr](https://docs.ropensci.org/scrubr/): biodiversity occurrence data quality
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
@@ -24,7 +25,7 @@
 
 - [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
 - [checkpoint](https://cran.r-project.org/web/packages/checkpoint/vignettes/checkpoint.html): managing packages for reproducibility
-- [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
+- [dismo](https://cran.r-project.org/web/packages/dismo/index.html): species distribution modeling
 - [ggmap](https://cran.r-project.org/web/packages/ggmap/index.html): geospatial analysis
 - [knitr](https://yihui.org/knitr/): report generation from RMarkdown code
 - [packrat](https://rstudio.github.io/packrat/): managing packages
