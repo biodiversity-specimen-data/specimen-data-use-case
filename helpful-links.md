@@ -7,11 +7,11 @@
 
 ## R packages we like
 
-- **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
--- dplyr: data managing made easy
--- tidyr: for tidying your data
--- ggplot2: data visualization
--- stringr: string filtering and manipulation (recommended by [@frog_phylo](https://twitter.com/frog_phylo/status/1265633360153579520?s=20))
+- **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**.  
+  - dplyr: data managing made easy  
+  - tidyr: for tidying your data  
+  - ggplot2: data visualization  
+  - stringr: string filtering and manipulation (recommended by [@frog_phylo](https://twitter.com/frog_phylo/status/1265633360153579520?s=20))  
 
 ### R packages for biodiversity informatics
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
@@ -33,12 +33,12 @@
 - [knitr](https://yihui.org/knitr/): report generation from RMarkdown code
 - [packrat](https://rstudio.github.io/packrat/): managing packages
 - [rOpenSci](https://ropensci.org/packages/): "Our packages are carefully vetted, staff- and community-contributed R software tools that lower barriers to working with scientific data sources and data that support research applications on the web."
+  
+  
+## Links for more learning.  
 
-
-## Links for more learning
-
-- [Twitter for R programmers](https://www.t4rstats.com/): how to engage with the R community via Twitter
-- [The Carpentries](https://carpentries.org/): "The Carpentries teaches foundational coding, and data science skills to researchers worldwide."  The organization hosts workshops and makes its lesson plans available under CC for self-learning and reuse. The links below are their main lesssons but you can also browse the Github orgs for more.
+- [Twitter for R programmers](https://www.t4rstats.com/): how to engage with the R community via Twitter   
+- [The Carpentries](https://carpentries.org/): "The Carpentries teaches foundational coding, and data science skills to researchers worldwide."  The organization hosts workshops and makes its lesson plans available under CC for self-learning and reuse. The links below are their main lesssons but you can also browse the Github orgs for more.   
   - Software Carpentry lessons: https://software-carpentry.org/lessons/
   - Data Carpentry lessons: https://datacarpentry.org/lessons/
   - Library Carpentry lessons: https://librarycarpentry.org/lessons/
