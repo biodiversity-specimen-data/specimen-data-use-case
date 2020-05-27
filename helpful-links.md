@@ -16,14 +16,18 @@
 ### R packages for biodiversity informatics
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
-- [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
-- [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database
+- [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science for "inexperienced R users"
+  -[bddwc](https://bdverse.org/bddwc/): standardizes data to Darwin Core (DwC) format
+  -[bdchecks](https://bdverse.org/bdchecks/): performs data check for biodiversity data
+  -[bdclean](https://bdverse.org/bdclean/): cleans biodiversity data
+- [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database. See [tutorial](https://github.com/bmaitner/RBIEN/blob/master/tutorials/RBIEN_tutorial.Rmd).
 - [lubridate](https://lubridate.tidyverse.org/): for cleaning and converting dates
 - [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
 - [scrubr](https://docs.ropensci.org/scrubr/): biodiversity occurrence data quality
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
 - [spThin](https://cran.r-project.org/web/packages/spThin/spThin.pdf): reducing spatial sampling bias of occurrence records (recommended by [@maverickpandion](https://twitter.com/maverickpandion/status/1265643410163187713?s=20))
+
 ### Other Important R packages
 
 - [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
