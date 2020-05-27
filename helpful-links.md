@@ -27,7 +27,7 @@
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
 - [spThin](https://cran.r-project.org/web/packages/spThin/spThin.pdf): reducing spatial sampling bias of occurrence records (recommended by [@maverickpandion](https://twitter.com/maverickpandion/status/1265643410163187713?s=20)).    
--[wallace](https://wallaceecomod.github.io/): "R-based platform for reproducible modeling of species niches and distributions". Note - this requires rJava
+- [wallace](https://wallaceecomod.github.io/): "R-based platform for reproducible modeling of species niches and distributions". Note - this requires rJava
 
 ### Other Important R packages
 
