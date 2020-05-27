@@ -8,9 +8,12 @@
 ## R packages we like
 
 - **[tidyverse](https://www.tidyverse.org/): must-have suite of packages for data wrangling and analysis**
+-- dplyr: data managing made easy
+-- tidyr: for tidying your data
+-- ggplot2: data visualization
+-- stringr: string filtering and manipulation (recommended by [@frog_phylo](https://twitter.com/frog_phylo/status/1265633360153579520?s=20))
 
 ### R packages for biodiversity informatics
-Downloading data
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
 - [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science
@@ -20,7 +23,7 @@ Downloading data
 - [scrubr](https://docs.ropensci.org/scrubr/): biodiversity occurrence data quality
 - [taxize](https://docs.ropensci.org/taxize/): access to multiple taxonomic data sources via APIs
 - [taxizedb](https://docs.ropensci.org/taxizedb/): access to taxonomic data sources via local database
-
+- [spThin](https://cran.r-project.org/web/packages/spThin/spThin.pdf): reducing spatial sampling bias of occurrence records (recommended by [@maverickpandion](https://twitter.com/maverickpandion/status/1265643410163187713?s=20))
 ### Other Important R packages
 
 - [biogeo](https://cran.r-project.org/web/packages/biogeo/index.html): spatial data quality
