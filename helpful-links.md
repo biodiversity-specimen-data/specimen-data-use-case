@@ -16,10 +16,10 @@
 ### R packages for biodiversity informatics
 - [iDigBio R package](https://github.com/idigbio/ridigbio)
 - [spocc](https://docs.ropensci.org/spocc/): access to multiple biodiversity occurrence sources, including the iDigBio Portal and GBIF, via APIs
-- [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science for "inexperienced R users"
-  -[bddwc](https://bdverse.org/bddwc/): standardizes data to Darwin Core (DwC) format
-  -[bdchecks](https://bdverse.org/bdchecks/): performs data check for biodiversity data
-  -[bdclean](https://bdverse.org/bdclean/): cleans biodiversity data
+- [bdverse](https://bd-r.github.io/The-bdverse/index.html): suite of packages to facilitating biodiversity science for "inexperienced R users".   
+  - [bddwc](https://bdverse.org/bddwc/): standardizes data to Darwin Core (DwC) format.   
+  - [bdchecks](https://bdverse.org/bdchecks/): performs data check for biodiversity data.   
+  - [bdclean](https://bdverse.org/bdclean/): cleans biodiversity data.   
 - [BIEN](https://cran.r-project.org/web/packages/BIEN/index.html): access to the Botanical Information and Ecology Network database. See [tutorial](https://github.com/bmaitner/RBIEN/blob/master/tutorials/RBIEN_tutorial.Rmd).
 - [lubridate](https://lubridate.tidyverse.org/): for cleaning and converting dates
 - [coordinatecleaner](https://ropensci.github.io/CoordinateCleaner/): spatial and temporal data quality
