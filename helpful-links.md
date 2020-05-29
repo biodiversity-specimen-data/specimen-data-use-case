@@ -61,3 +61,6 @@ How do you ensure your code is doing what it is supposed to be doing?  Code test
 
 - [Unit testing for R](https://testthat.r-lib.org/)
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
+
+## Non-R tools:
+- [OpenRefine](https://openrefine.org/): can be used to clean data (ex. [Baldwin et al. 2017](https://doi.org/10.3732/ajb.1600326))
