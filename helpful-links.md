@@ -63,4 +63,5 @@ How do you ensure your code is doing what it is supposed to be doing?  Code test
 - [Background reading on unit testing for R](http://r-pkgs.had.co.nz/tests.html)
 
 ## Non-R tools:
-- [OpenRefine](https://openrefine.org/): can be used to clean data (ex. [Baldwin et al. 2017](https://doi.org/10.3732/ajb.1600326))
+- [OpenRefine](https://openrefine.org/): can be used to clean data (ex. [Baldwin et al. 2017](https://doi.org/10.3732/ajb.1600326)).   
+- [Biodiverse](http://shawnlaffan.github.io/biodiverse/):  "tool for the spatial analysis of diversity using indices based on taxonomic, phylogenetic, trait and matrix-based (e.g. genetic distance) relationships, as well as related environmental and temporal variations."   
