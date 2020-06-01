@@ -14,6 +14,8 @@ This document provides a place to post links to code generally related to using 
 
 **[Caviomorph Ecomorphology Resources](https://github.com/luisDVA/Caviomorph-Ecomorphology-Resources-App).** This app accompanies the manuscript _[Patterns in research and data-sharing for the study of form and function in caviomorph rodents](https://doi.org/10.1093/jmammal/gyaa002)_ to make data referenced in the paper accessible for exploration and reuse. See the app live [here](https://luisdva.shinyapps.io/caviomorph_ecomorphology_resources_app).
 
+**[R scripts for teaching course-based undergraduate research](https://github.com/mgaynor1/CURE-FL-Plants).** Course material made for "CURE: Florida Plants and Climate Change" taught at the University of Florida in Spring 2020.
+
 **[Spatial Ecology Workshop](https://ufbi2018.github.io/).** Content from a 2018 workshop put together by University of Florida Biodiversity Informatics fellows.
 
 **[TrIAS](https://github.com/trias-project/checklist-recipe/wiki).** Tools for standardizing thematic species checklist data to Darwin Core using R.
