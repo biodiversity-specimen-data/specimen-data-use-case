@@ -6,7 +6,7 @@ output:
     df_print: kable
 ---
 
-_Code here written by [Erica Krimmel](https://orcid.org/0000-0003-3192-0080) for a workshop at the [2020 Digital Data conference](https://bit.ly/DigiData4)._
+_Code here written by [Erica Krimmel](https://orcid.org/0000-0003-3192-0080) for a workshop at the [2020 Digital Data conference](https://bit.ly/DigiData4). You can find the RMarkdown (editable/runnable) version of this document [here](https://biodiversity-specimen-data.github.io/specimen-data-use-case/solution/demo_ridigbio_overview.Rmd)._
 
 You can use the [iDigBio API](https://github.com/idigbio/idigbio-search-api/wiki) to find specimen records using the same search parameters available in the [iDigBio Portal](https://www.idigbio.org/portal/search). Wrappers like [ridigbio](https://cran.r-project.org/web/packages/ridigbio/index.html), which we are covering in this demo, provide a simple way to use the iDigBio API in the context of your research pipeline. If you already use, or are considering using, R for data exploration or analysis, it makes sense to bring data into R directly from iDigBio via the API. In this demo we will cover a brief overview of fundamental functions in the ridigbio package that you can use to make your research pipeline more reproducible.
 
