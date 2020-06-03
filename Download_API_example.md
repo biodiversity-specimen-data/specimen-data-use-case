@@ -24,4 +24,4 @@ iDigBio has two API's:
 ![image](./images/inspectChrome.png)
  
  2. 
- ![image](./images/inspectChromePart2)
+ ![image](./images/inspectChromePart2.png)
