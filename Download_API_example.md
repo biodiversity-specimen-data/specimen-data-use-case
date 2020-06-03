@@ -21,7 +21,7 @@ iDigBio has two API's:
   To learn how to format the query, you can *inspect* a query from the web portal and view the *Request Payload*.
 
  1. 
-<img scr="https://github.com/biodiversity-specimen-data/specimen-data-use-case/images/inspectChrome.png" />
+![image](https://github.com/biodiversity-specimen-data/specimen-data-use-case/images/inspectChrome.png)
  
  2. 
- <img scr="https://github.com/biodiversity-specimen-data/specimen-data-use-case/images/inspectChromePart2" />
+ ![image](https://github.com/biodiversity-specimen-data/specimen-data-use-case/images/inspectChromePart2)
