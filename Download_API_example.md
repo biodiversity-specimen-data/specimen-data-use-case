@@ -1,10 +1,13 @@
 # iDigBio Download API    
-iDigBio has two API's: 
+iDigBio has four API's: 
   1. [Search API](https://github.com/idigbio/idigbio-search-api/wiki)
     - accessed through the ridigbio R package
     - query under 100,000
   2. [Download API](https://www.idigbio.org/wiki/index.php/IDigBio_Download_API)
     - allows query over 100,000
+  3. [Record and Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
+    - used for returning prior versions of records or media records
+    
   
  ## Example of Download API query 
  ### Full text 
@@ -14,7 +17,7 @@ iDigBio has two API's:
  https://api.idigbio.org/v2/download/?rq={"data":{"type":"fulltext","value":{"Mrs","Ms","Miss"}}}&email={email@college.edu}
  ```
   
-  **Note: Searching the two letters of "Ms" will yeild way too many records**
+  **Note: Searching the two letters of "Ms" will yield way too many records**
   
   
   ## How to format a query to match the portal
