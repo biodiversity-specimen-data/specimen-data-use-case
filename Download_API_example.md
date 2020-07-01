@@ -5,8 +5,10 @@ iDigBio has four API's:
     - query under 100,000
   2. [Download API](https://www.idigbio.org/wiki/index.php/IDigBio_Download_API)
     - allows query over 100,000
-  3. [Record and Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
-    - used for returning prior versions of records or media records
+  3. [Record API](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
+    - used for returning prior versions of records
+  4. [Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
+    - used for returning prior versions of media records
     
   
  ## Example of Download API query 
