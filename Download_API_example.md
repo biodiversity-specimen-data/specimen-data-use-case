@@ -1,14 +1,14 @@
 # iDigBio Download API    
 iDigBio has four API's: 
-  1. [Search API](https://github.com/idigbio/idigbio-search-api/wiki)
-    - accessed through the ridigbio R package
-    - query under 100,000
-  2. [Download API](https://www.idigbio.org/wiki/index.php/IDigBio_Download_API)
-    - allows query over 100,000
-  3. [Record API](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
-    - used for returning prior versions of records
-  4. [Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)
-    - used for returning prior versions of media records
+  1. [Search API](https://github.com/idigbio/idigbio-search-api/wiki).  
+    -accessed through the ridigbio R package   
+    -query under 100,000   
+  2. [Download API](https://www.idigbio.org/wiki/index.php/IDigBio_Download_API)  
+    - allows query over 100,000   
+  3. [Record API](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)  
+    - used for returning prior versions of records   
+  4. [Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)    
+    - used for returning prior versions of media records   
     
   
  ## Example of Download API query 
