@@ -13,7 +13,7 @@ iDigBio has four API's:
   
  ## Example of Download API query 
  ### Full text 
- Here I search for Mrs, Ms, and Miss in fulltext. Change the **email@college.edu** to your email address. This can be copy and pasted into your browser
+ Here I search for Mrs, Ms, and Miss in fulltext. Change the **email@college.edu** to your email address. This can be copy and pasted into your web browser.   
  
  ```
  https://api.idigbio.org/v2/download/?rq={"data":{"type":"fulltext","value":{"Mrs","Ms","Miss"}}}&email={email@college.edu}
@@ -30,3 +30,14 @@ iDigBio has four API's:
  
  2. 
  ![image](./images/inspectChromePart2.png)
+ 
+ 
+    
+## Downloading all the plant specimen    
+Change the **email@college.edu** to your email address. This can be copy and pasted into your web browser.        
+This will take about 24 - 48 hours.    
+   
+  ```
+ https://api.idigbio.org/v2/download/?rq={"kingdom":["Plantae"]}&email={email@college.edu}
+  ```
+
