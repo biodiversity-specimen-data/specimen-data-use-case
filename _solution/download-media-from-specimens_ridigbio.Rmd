@@ -95,6 +95,8 @@ mediapath_external <- paste("jpgs_external/", records$uuid, ".jpg", sep = "")
 possibly_download.file = purrr::possibly(download.file, 
                                          otherwise = "cannot download")
 
+"mode" argument (="wb") in the walk function to download.file. 
+
 # Iterate through the action of downloading whatever file is at each
 # iDigBio URL
 purrr::walk2(.x = mediaurl_idigbio,
