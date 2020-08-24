@@ -1,0 +1,57 @@
+---
+title: "Get a list of recordsets published on an aggregator, using R and iDigBio"
+output:
+  html_document:
+    code_folding: show
+    df_print: kable
+---
+
+Code here written by [Erica Krimmel](https://orcid.org/0000-0003-3192-0080). Please see **Use Case: [Get a list of recordsets published on an aggregator](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/list-recordsets)** for context.
+
+```{r message=FALSE}
+# Load core libraries; install these packages if you have not already
+library(ridigbio)
+library(tidyverse)
+library(jsonlite)
+
+# Load library for making nice HTML output
+library(kableExtra)
+```
+
+iDigBio makes recordset information available via its API, so we can go there to acquire a list of published recordsets, and then use the `idig_count_records` function of the [ridigbio package](https://cran.r-project.org/web/packages/ridigbio/) to summarize the number of occurrence records contained within each recordset.
+
+```{r}
+# Determine how many recordsets exist in order to set a limit below
+limit <- fromJSON("http://search.idigbio.org/v2/summary/count/recordsets?rsq={%22data.ingest%22:%22true%22}")
+
+# Fetch list of recordsets from the iDigBio API where "data.ingest" is true
+recordsets_raw <- fromJSON(paste0(
+  "http://search.idigbio.org/v2/search/recordsets?rsq={%22data.ingest%22:%22true%22}&limit=",
+  limit$itemCount))
+
+# Format `recordsets_raw` as a tibble and fetch the summary count of occurrence
+# records for each recordset
+recordsets <- recordsets_raw$items %>% 
+  flatten() %>% 
+  select(-starts_with("indexTerms")) %>% 
+  rowwise() %>% 
+  mutate(recordcount = 
+           ridigbio::idig_count_records(rq = list(
+             recordset = uuid)))
+
+# Save `recordsets` as a CSV for future reference to save time on the rowwise
+# operation above; in order to do this we need to exclude list-columns
+recordsets_save <- recordsets %>% 
+  select(-data.contacts, -data.other_guids)
+
+write_csv(recordsets_save, "recordsets_idigbio.csv")
+```
+
+Our results look like this:
+
+```{r echo = FALSE, results = 'asis'}
+knitr::kable(recordsets_save) %>% 
+    kable_styling(bootstrap_options = 
+                         c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(height = "600px")
+```
