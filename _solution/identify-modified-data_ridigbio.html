@@ -2631,14 +2631,14 @@ Boreotrophon multicostatus (Eschscholtz, 1829)
 </div>
 <div id="explore-differences-in-the-data" class="section level2">
 <h2>Explore differences in the data</h2>
-<p>We can already see that there are some formatting differences between the data from the provider and that modified by the aggregator. For example, iDigBio converts all data to lowercase, which was historically useful for standardizing and indexing data across all of the recordsets represented in the iDigBio database. Family and genus names typically are capitalized, so we will reformat those fields here:</p>
+<p>We can already see that there are some formatting differences between the data from the provider and that modified by the aggregator. For example, iDigBio converts all data to lowercase, which was historically useful for standardizing and indexing data across all of the recordsets represented in the iDigBio database. Family and genus names are capitalized by convention, so we will reformat those fields here:</p>
 <pre class="r"><code># Reformat aggregator fields to title case
 df_names &lt;- df_names %&gt;% 
   mutate(aggregator_family = str_to_title(aggregator_family)) %&gt;% 
   mutate(aggregator_genus = str_to_title(aggregator_genus))
 
 # Subset `df_names` to show example
-df_names[1:10,] %&gt;% 
+df_names[1:5,] %&gt;% 
   select(-flags) %&gt;% 
   kable() %&gt;% 
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;),
@@ -2877,196 +2877,6 @@ NA
 </td>
 <td style="text-align:left;">
 Ceratopogonidae indet.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0004af95-d2bf-4247-9522-440662c2788f
-</td>
-<td style="text-align:left;">
-d29d432a-d390-4479-8bf7-552399a5eb0c
-</td>
-<td style="text-align:left;">
-LACMIP 20651.58
-</td>
-<td style="text-align:left;color: red !important;">
-Epitoniidae
-</td>
-<td style="text-align:left;">
-Epitoniidae
-</td>
-<td style="text-align:left;color: red !important;">
-Hirtoscala
-</td>
-<td style="text-align:left;color: red !important;">
-tinctum
-</td>
-<td style="text-align:left;color: red !important;">
-NA
-</td>
-<td style="text-align:left;">
-Hirtoscala
-</td>
-<td style="text-align:left;">
-tinctum
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Hirtoscala tinctum (Carpenter, 1864)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-000587e5-d012-4f50-bc04-52f44e0182d3
-</td>
-<td style="text-align:left;">
-b5dc4eb7-6f1a-44b5-a4aa-2d8dd7608293
-</td>
-<td style="text-align:left;">
-LACMIP 10099.9
-</td>
-<td style="text-align:left;color: red !important;">
-Turritellidae
-</td>
-<td style="text-align:left;">
-Turritellidae
-</td>
-<td style="text-align:left;color: red !important;">
-Turritella
-</td>
-<td style="text-align:left;color: red !important;">
-hearni
-</td>
-<td style="text-align:left;color: red !important;">
-NA
-</td>
-<td style="text-align:left;">
-Turritella
-</td>
-<td style="text-align:left;">
-hearni
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Turritella hearni Merriam, 1941
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-00058f4c-855d-423b-a9b5-aaec1b1bd25f
-</td>
-<td style="text-align:left;">
-727c3b93-52e8-403c-9e73-2232ac01a37e
-</td>
-<td style="text-align:left;">
-LACMIP 22382.118
-</td>
-<td style="text-align:left;color: red !important;">
-Calyptraeidae
-</td>
-<td style="text-align:left;">
-Calyptraeidae
-</td>
-<td style="text-align:left;color: red !important;">
-Crepidula
-</td>
-<td style="text-align:left;color: red !important;">
-onyx
-</td>
-<td style="text-align:left;color: red !important;">
-NA
-</td>
-<td style="text-align:left;">
-Crepidula
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Crepidula sp.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-0006606e-53aa-4264-8af3-d55ff9951759
-</td>
-<td style="text-align:left;">
-240d0a7f-b29e-45ea-8394-c115ee56e8fd
-</td>
-<td style="text-align:left;">
-LACMIP 5060.45
-</td>
-<td style="text-align:left;color: red !important;">
-Pectinidae
-</td>
-<td style="text-align:left;">
-Pectinidae
-</td>
-<td style="text-align:left;color: red !important;">
-Leptopecten
-</td>
-<td style="text-align:left;color: red !important;">
-latiauratus
-</td>
-<td style="text-align:left;color: red !important;">
-NA
-</td>
-<td style="text-align:left;">
-Leptopecten
-</td>
-<td style="text-align:left;">
-latiauratus
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Leptopecten latiauratus (Conrad, 1837)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-00067a2d-5d0f-47d7-9072-4b9b7b89bd88
-</td>
-<td style="text-align:left;">
-e5e3733b-c1d8-4e8c-a435-9a8ac0bbcde4
-</td>
-<td style="text-align:left;">
-LACMIP 7290.22
-</td>
-<td style="text-align:left;color: red !important;">
-Potamididae
-</td>
-<td style="text-align:left;">
-Potamididae
-</td>
-<td style="text-align:left;color: red !important;">
-Cerithidea
-</td>
-<td style="text-align:left;color: red !important;">
-californica
-</td>
-<td style="text-align:left;color: red !important;">
-NA
-</td>
-<td style="text-align:left;">
-Cerithideopsis
-</td>
-<td style="text-align:left;">
-californica
-</td>
-<td style="text-align:left;">
-NA
-</td>
-<td style="text-align:left;">
-Cerithideopsis californica (Haldeman, 1840)
 </td>
 </tr>
 </tbody>
@@ -6616,7 +6426,7 @@ geopoint_low_precision , gbif_reference_added , gbif_genericname_added , dwc_dat
 </tbody>
 </table>
 </div>
-<p>When iDigBio makes modifications to data, these actions are recorded with <em>data quality flags</em>, for instance you will notice that all of the rows in the filtered data above have the flag “GENUS_REPLACED.” We could have used values in the <em>flags</em> field, like “GENUS_REPLACED,” to search for records back at the beginning of this demo. You can learn more about the flags that iDigBio uses <a href="https://github.com/iDigBio/idigbio-search-api/wiki/Data-Quality-Flags">here</a>.</p>
+<p>When iDigBio makes modifications to data, these actions are recorded with <strong>data quality flags</strong>, for instance you will notice that all of the rows in the filtered data above have the flag “dwc_genus_replaced.” We could have used values in the <em>flags</em> field, like “dwc_genus_replaced,” to search for records back at the beginning of this demo. You can learn more about the flags that iDigBio uses <a href="https://github.com/iDigBio/idigbio-search-api/wiki/Data-Quality-Flags">here</a>.</p>
 </div>
 <div id="summarize-differences-in-the-data" class="section level2">
 <h2>Summarize differences in the data</h2>
