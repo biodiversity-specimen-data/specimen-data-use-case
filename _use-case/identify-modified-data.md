@@ -5,7 +5,7 @@ category: collections management
 
 ### Conditions
 
-1. User wants to know how data has been modified by the aggregator data quality processing.
+1. User wants to know how data have been modified by the aggregator data quality processing.
 1. User is familiar with fields that they might expect to be modified, e.g. those related to taxonomy or geography.
 
 ### Example scenario
