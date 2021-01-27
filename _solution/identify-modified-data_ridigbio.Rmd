@@ -1,5 +1,5 @@
 ---
-title: "How to identify data that has been modified by aggregator data quality processing, using R and iDigBio"
+title: "How to identify data that have been modified by aggregator data quality processing, using R and iDigBio"
 output:
   html_document:
     code_folding: show
