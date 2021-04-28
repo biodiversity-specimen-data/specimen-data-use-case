@@ -1,0 +1,459 @@
+---
+title: "Report Metrics for Collections from an Institution"
+author:
+  - David Jennings, iDigBio Project Manager^[University of Florida, Florida Museum of Natural History, <https://orcid.org/0000-0003-0520-6983>]
+date: "Created on 2021-Mar-30. Last modified on `r format(Sys.time(), '%Y-%b-%d')`."
+output:
+  html_document:
+    code_folding: show
+    df_print: paged
+---
+
+# Objective
+In this use case, we explore a solution for how to [Report metrics for collections within an institution](https://biodiversity-specimen-data.github.io/specimen-data-use-case/use-case/report-institution-metrics.html) using the [iDigBio API](https://github.com/iDigBio/idigbio-search-api/wiki). iDigBio began collecting statistics for each recordset contained in the [iDigBio Portal](https://www.idigbio.org/portal) in January 2015, and these statistics are available in tabular format on the particular recordset's Data Use tab. However, these data can also be accessed via the iDigBio API to facilitate aggregation for reporting purposes.
+
+
+# Scenario
+For this solution, let's assume that the Director of the [University of Florida's](http://www.ufl.edu/) [Florida Museum of Natural History](https://www.floridamuseum.ufl.edu/) has asked us to report metrics on the collections held by the university based on the data available in iDigBio.
+
+
+# Let's get things set up
+
+## First, we need to load a helper package
+The iDigBio API returns data in JSON (JavaScript Object Notation) format, so we'll use the [`jsonlite`](https://cran.r-project.org/web/packages/jsonlite/index.html) package to help us retrieve and parse the data. Make sure you install the package if you haven't already using the command `install.packages("jsonlite")`.
+```{r}
+library(jsonlite)
+```
+
+## Second, let's note the versions of everything to help with troubleshooting
+```{r}
+sessionInfo()
+```
+
+## Third, remember that we need to encode certain characters in URLs
+When making the API calls, we will need to encode the "unsafe" characters in the URLs. The following are the most common characters in the API calls that should be encoded:
+
+| Character | Encoding | Description                                      |
+|-----------|----------|--------------------------------------------------|
+| space     | %20      | Spaces separate words in JSON strings            |
+| "         | %22      | Quotation marks enclose strings in JSON          |
+| {         | %7B      | Left brace indicates the start of a JSON object  |
+| }         | %7D      | Right brace indicates the end of a JSON object   |
+| [         | %5B      | Left bracket indicates the start of a JSON array |
+| ]         | %5D      | Right bracket indicates the end of a JSON array  |
+| ,         | %2C      | Commas separate items in JSON arrays             |
+
+## And, fourth, let's establish a few parameters for the reporting
+```{r}
+# Time interval for statistics as "year", "month", "week", or "day"
+## NOTE: be wise in your selection because week and day, in particular, will produce extremely large result sets
+dateInterval <- "year"
+
+# Start date for statistics in "YYYY-MM-DD" format
+## NOTE: we will default to the date that iDigBio started collecting statistics
+minDate <- "2015-01-16"
+
+# End date for statistics in "YYYY-MM-DD" format
+## NOTE: we will default to the current system date
+maxDate <- format(Sys.Date(), format="%Y-%m-%d")
+
+# The number of values to return
+## NOTE: this only applies to certain API calls, like Top-N Records
+maxCount = 15
+
+# The fields we are interested in for the Taxonomic Coverage
+## NOTE: be wise in your selection because the data grows exponentially with each additional field
+## Valid fields are listed at: https://github.com/iDigBio/idigbio-search-api/wiki/Index-Fields#record-query-fields
+taxaFields = c("kingdom", "family")
+```
+
+
+# Okay, now we're ready to identify the institutional recordsets
+To gather the information for reporting, we need to know the identifiers (UUIDs) of each collection held by the university. We can manually determine this by searching through the [Data Publishers](https://www.idigbio.org/portal/publishers) on the iDigBio portal.
+```{r}
+# Institution name for use later in plot titles etc.
+institution <- "University of Florida"
+
+# Recordset UUIDs
+instUUID <- c("bd7cfd55-bf55-46fc-878d-e6e11f574ccd", # University of Florida Herpetology
+              "f9a33279-d6ba-41c7-a511-ef6adfcb6e20", # University of Florida Vertebrate Paleontology
+              "781fd581-7b93-471e-a025-413e4bcd8491", # University of Florida Herbarium (FLAS)
+              "1ba0bbad-28a7-4c50-8992-a028f79d1dc5", # University of Florida Invertebrate Paleontology
+              "6bb853ab-e8ea-43b1-bd83-47318fc4c345", # UF Invertebrate Zoology
+              "0e162e0a-bf3e-4710-9357-44258ca12abb", # UF Florida Museum Paleobotany
+              "c38b867b-05f3-4733-802e-d8d2d3324f84", # UF FLMNH Ichthyology
+              "2b76daad-10dc-4235-843e-dffad2424df7", # UF Florida Museum of Natural History Ornithology
+              "48e1b8c1-91aa-4b87-8ca0-de1f81232eaf", # UF Florida Museum of Natural History Mammals
+              "b3b89632-0a22-4532-a05b-6830d07542f7", # UF Environmental Archaeology North Midden Zooarchaeological Data
+              "b293a647-5fb8-4b82-bf5b-571e7d6fad03", # UF Environmental Archaeology Tick Island Zooarchaeological Data
+              "c02ce6fc-a2f3-497e-bc3c-0adce054db72", # UF Florida Archaeology Parnell Mound Site (8CO326), Feature 1 Zooarchaeological Data
+              "fccc3c1d-d9df-4ffd-b7e1-1b9eb11f95b1", # University of Florida Herbarium
+              "b5e5c781-765f-4981-af2a-c19c250e2cf0", # University of Florida Herbarium
+              "1f2b44b8-8556-4d6e-8247-4611689551cf", # University of Florida Herbarium
+              "e85a9948-9c9e-451d-9485-b2b4cb7b73d5", # University of Florida, Florida Museum of Natural History
+              "6135420b-aac1-476e-bda5-e07ba8458662") # Repatriación de datos de los lepidópteros depositados en la Colección del McGuire Center for Lepidoptera and Biodiversity, Florida Museum of Natural History
+```
+As an aside, the recommended maximum "safe" length of internet URLs is around 2,000 characters. As a result, for the queries in this notebook, we could include a maximum of about 40-45 recordset UUIDs.
+
+# Let's get the total number of specimen and media records
+Two of the simplest metrics we can report are the total counts of specimen records and media records contained in the iDigBio Portal for the recordsets in question. For this, we will make calls to the [Record Count](https://github.com/iDigBio/idigbio-search-api/wiki#record-count) and [Media count](https://github.com/iDigBio/idigbio-search-api/wiki#media-count) API endpoints.
+```{r}
+# Initialize the API URLs
+sURL <- "https://search.idigbio.org/v2/summary/count/records/"
+mURL <- "https://search.idigbio.org/v2/summary/count/media/"
+
+# Add the UUIDs as an array []; encase each UUID in quotation marks and separate with commas
+sURL <- paste(sURL, "?rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D%7D", sep="")
+mURL <- paste(mURL, "?rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D%7D", sep="")
+
+# Get the total number of specimen records
+sCount <- jsonlite::read_json(sURL)
+
+# Get the total number of media records
+mCount <- jsonlite::read_json(mURL)
+```
+There are **`r format(sCount$itemCount, big.mark=",")` specimen records** with **`r format(mCount$itemCount, big.mark=",")` associated media records** in iDigBio for **`r institution`**.
+
+
+# Now, let's take a look at the data ingested in iDigBio over time
+To examine the data ingestion statistics over time, we will make calls to the [Stats](https://github.com/iDigBio/idigbio-search-api/wiki#stats) API endpoint.
+```{r}
+# Initialize the API URL
+baseiURL <- paste("https://search.idigbio.org/v2/summary/stats/api/", "?dateInterval=", dateInterval, "&minDate=", minDate, "&maxDate=", maxDate, sep="")
+
+# Now add the UUIDs, but note that this API endpoint does not allow `rq` based searches
+## So, we need to create a list of URLs (one URL for each recordset) and then combine the results later
+iURL <- lapply(instUUID, function(x) paste(baseiURL, "&recordset=", x, sep=""))
+
+# Get the ingestion statistics for each recordset
+ingestStatsRAW <- lapply(iURL, function(x) jsonlite::read_json(x))
+```
+
+When we retrieve the ingestion data from the API, it comes in as a list of recordsets with the basic structure: `dates` > `YYYY-MM-DD` > `UUID` > `Metric`. So, we need to manipulate and aggregate this information into a data frame of dates and counts for each metric, which will facilitate plotting.
+```{r}
+# Flatten the list structure and convert to a data frame
+ingestStats <- as.data.frame(unlist(ingestStatsRAW))
+
+# Convert the row names into a new column
+ingestStats <- cbind(rownames(ingestStats), data.frame(ingestStats, row.names=NULL))
+
+# Rename the columns to make the next few steps easier
+colnames(ingestStats)<- c("mashup","Count")
+
+# Split the first column into separate columns
+ingestStats <- cbind(data.frame(do.call("rbind", strsplit(as.character(ingestStats$mashup), ".", fixed = TRUE))), ingestStats$Count)
+ingestStats <- subset(ingestStats, select = c("X2", "X3", "X4","ingestStats$Count"))
+
+# Rename the columns to make sense
+colnames(ingestStats)<- c("Date", "Recordset", "Metric", "Count")
+
+# Convert the dates from string to date format
+ingestStats$Date <- as.Date(substr(ingestStats$Date, 1, 10))
+
+# Generate cumulative sums by date by metrics
+ingestMetrics <- aggregate(Count ~ Date + Metric, data = ingestStats, FUN = sum)
+```
+
+Now let's plot the data ingestion metrics over time:
+```{r}
+# Figure out the data range to determine location of minor log tick marks
+## Magic for minor ticks: https://stackoverflow.com/questions/5821763/logarithmic-y-axis-tick-marks-in-r-plot-or-ggplot2
+magRng <- floor(log10(range(ingestMetrics$Count)+1))        # Upper+lower 10^x magnitudes with zero protection
+pwr <- seq(magRng[1], magRng[2]+1)                          # Adjust the 10^x range for display
+ticksat <- as.vector(sapply(pwr, function(p) (1:10)*10^p))  # Locations of minor log tick marks
+
+# Start by plotting the specimen records
+with(subset(ingestMetrics, Metric == "records"), {
+  plot(Date, Count, type="o", pch=21, lty=1, col="mediumblue", xlab="Date", ylab="Count", main=paste("Data Ingestion Metrics for", institution), ylim=c(10^magRng[1], 10^(magRng[2]+1)), log="y", yaxt="n")
+  axis(2, 10^pwr)
+  axis(2, ticksat, labels=NA, tcl=-0.25, lwd=0, lwd.ticks=1)
+})
+
+# Now add the media records
+with(subset(ingestMetrics, Metric == "mediarecords"), {
+  lines(Date, Count, type="o", pch=22, lty=2,  col="firebrick")
+})
+
+# Finally, add a legend
+legend("bottomright", legend=c("Specimen Records", "Media Records"), pch=21:22, lty=1:2, col=c("mediumblue", "firebrick"), bg="transparent", cex=0.75)
+
+```
+
+
+# Let's see how the institution's data has been used over time
+iDigBio's data use statistics are provided via the following metrics:
+
+| Metric         | Definition                                                                    |
+|----------------|-------------------------------------------------------------------------------|
+| Search         | Total number of records that have matched a search query                      |
+| Seen           | Total number of records that have been displayed to users in a browser window |
+| Download       | Total number of records that have been downloaded by users                    |
+| Records Viewed | Total number of specimen records that have been directly viewed by users      |
+| Media Viewed   | Total number of media records that have been directly viewed by users         |
+| Search Count   | Total number of search events that have been executed by users                |
+| Download Count | Total number of download events that have been executed by users              |
+
+Similar to the data ingestion metrics, the data use metrics arrive as a list of recordsets with the basic structure: `dates` > `YYYY-MM-DD` > `UUID` > `Metric`, so we'll follow the same procedure as above to facilitate plotting.
+```{r}
+# Initialize the API URL
+baseuURL <- paste("https://search.idigbio.org/v2/summary/stats/search/", "?dateInterval=", dateInterval, "&minDate=", minDate, "&maxDate=", maxDate, sep="")
+
+# Now add the UUIDs but note that this API endpoint does not allow `rq` based searches
+## So, instead, we will to create a list of URLs (one URL for each recordset) and then combine the results later
+uURL <- lapply(instUUID, function(x) paste(baseuURL, "&recordset=", x, sep=""))
+
+# Get the data use statistics for each recordset
+useStatsRAW <- lapply(uURL, function(x) jsonlite::read_json(x))
+
+
+# Manipulate the data to facilitate plotting
+
+## Flatten the list structure and convert to a data frame
+useStats <- as.data.frame(unlist(useStatsRAW))
+
+## Convert the row names into a new column
+useStats <- cbind(rownames(useStats), data.frame(useStats, row.names=NULL))
+
+## Rename the columns to make the next few steps easier
+colnames(useStats)<- c("mashup","Count")
+
+## Split the first column into separate columns
+useStats <- cbind(data.frame(do.call("rbind", strsplit(as.character(useStats$mashup), ".", fixed = TRUE))), useStats$Count)
+useStats <- subset(useStats, select = c("X2", "X3", "X4","useStats$Count"))
+
+## Rename the columns to make sense
+colnames(useStats)<- c("Date", "Recordset", "Metric", "Count")
+
+## Convert the dates from string to date format
+useStats$Date <- as.Date(substr(useStats$Date, 1, 10))
+
+## Generate sums by date by metrics
+useMetrics <- aggregate(Count ~ Date + Metric, data = useStats, FUN = sum)
+```
+
+## To start, let's take a look at the number of search events compared with the number of download events
+```{r}
+# Figure out the data range to determine location of minor log tick marks
+magRng <- floor(log10(with(subset(useMetrics, subset = Metric %in% c("search_count", "download_count")), {range(Count)})+1))
+pwr <- seq(magRng[1], magRng[2]+1)
+ticksat <- as.vector(sapply(pwr, function(p) (1:10)*10^p))
+
+# Start by plotting the search events
+with(subset(useMetrics, Metric == "search_count"), {
+  plot(Date, Count, type="o", pch=21, lty=1, col="firebrick", xlab="Date", ylab="Count", main=paste("Data Use Metrics for", institution), ylim=c(10^magRng[1], 10^(magRng[2]+1)), log="y", yaxt="n")
+  axis(2, 10^pwr)
+  axis(2, ticksat, labels=NA, tcl=-0.25, lwd=0, lwd.ticks=1)
+})
+
+# Now add the download events
+with(subset(useMetrics, Metric == "download_count"), {
+  lines(Date, Count, type="o", pch=22, lty=2,  col="mediumblue")
+})
+
+# Finally, add a legend
+legend("bottomright", legend=c("Search Events", "Download Events"), pch=21:22, lty=1:2, col=c("firebrick", "mediumblue"), bg="transparent", cex=0.75)
+```
+
+## Next, let's look at the number of records downloaded as compared with the numbers of records and media directly viewed
+```{r}
+# Figure out the data range to determine location of minor log tick marks
+magRng <- floor(log10(with(subset(useMetrics, subset = Metric %in% c("download", "viewed_records", "viewed_media")), {range(Count)})+1))
+pwr <- seq(magRng[1], magRng[2]+1)
+ticksat <- as.vector(sapply(pwr, function(p) (1:10)*10^p))
+
+# Start by plotting the downloaded records
+with(subset(useMetrics, Metric == "download"), {
+  plot(Date, Count, type="o", pch=21, lty=1, col="mediumblue", xlab="Date", ylab="Count", main=paste("Data Use Metrics for", institution), ylim=c(10^magRng[1], 10^(magRng[2]+1)), log="y", yaxt="n")
+  axis(2, 10^pwr)
+  axis(2, ticksat, labels=NA, tcl=-0.25, lwd=0, lwd.ticks=1)
+})
+
+# Now add records viewed
+with(subset(useMetrics, Metric == "viewed_records"), {
+  lines(Date, Count, type="o", pch=22, lty=2,  col="firebrick")
+})
+
+# Now add media viewed
+with(subset(useMetrics, Metric == "viewed_media"), {
+  lines(Date, Count, type="o", pch=23, lty=3,  col="forestgreen")
+})
+
+# Finally, add a legend
+legend("bottomright", legend=c("Records Downloaded", "Records Viewed", "Media Viewed"), pch=21:23, lty=1:3, col=c("mediumblue", "firebrick", "forestgreen"), bg="transparent", cex=0.75)
+```
+
+## Can we see other trends through ratios of one metric to another metric?
+```{r}
+# The average number of records downloaded per download event
+dlRatio <- cbind(subset(useMetrics, Metric == "download")["Date"], subset(useMetrics, Metric == "download")["Count"] / subset(useMetrics, Metric == "download_count")["Count"])
+
+# The average number of records downloaded per search event
+sdRatio <- cbind(subset(useMetrics, Metric == "download")["Date"], subset(useMetrics, Metric == "download")["Count"] / subset(useMetrics, Metric == "search_count")["Count"])
+
+# The average number of records viewed per search event
+vsRatio <- cbind(subset(useMetrics, Metric == "search_count")["Date"], subset(useMetrics, Metric == "viewed_records")["Count"] / subset(useMetrics, Metric == "search_count")["Count"])
+
+
+# Plot the ratios
+
+## Figure out the data range to determine location of minor log tick marks
+magRng <- floor(log10(range(dlRatio$Count, sdRatio$Count, vsRatio$Count)))
+pwr <- seq(magRng[1], magRng[2]+1)
+ticksat <- as.vector(sapply(pwr, function(p) (1:10)*10^p))
+
+## Start by plotting the download ratio
+with(dlRatio, {
+  plot(Date, Count, type="o", pch=21, lty=1, col="mediumblue", xlab="Date", ylab="Count", main=paste("Data Use Ratios for", institution), ylim=c(10^magRng[1], 10^(magRng[2]+1)), log="y", yaxt="n")
+  axis(2, 10^pwr)
+  axis(2, ticksat, labels=NA, tcl=-0.25, lwd=0, lwd.ticks=1)
+})
+
+## Now add the download-to-search ratio
+with(sdRatio, {
+  lines(Date, Count, type="o", pch=22, lty=2,  col="firebrick")
+})
+
+# Now add the viewed-to-search ratio
+with(vsRatio, {
+  lines(Date, Count, type="o", pch=23, lty=3,  col="forestgreen")
+})
+
+## Finally, add a legend
+legend("bottomright", legend=c("Downloaded Records per Download Event", "Downloaded Records per Search Event", "Records Viewed per Search Event"), pch=21:23, lty=1:3, col=c("mediumblue", "firebrick", "forestgreen"), bg="transparent", cex=0.75)
+```
+
+
+# Let's shift gears and look at the taxonomic coverage of the specimen and media records
+For this examination, we will use the [Top-N Records](https://github.com/iDigBio/idigbio-search-api/wiki#top-n-records) API endpoint.
+```{r}
+# Initialize the API URL
+## Note: specify the taxonomic fields as an array [], encase each field in quotation marks, and separate with commas
+basetURL <- paste("https://search.idigbio.org/v2/summary/top/records/", "?top_fields=%5B", gsub("\"","%22",paste(dQuote(unlist(taxaFields),FALSE),collapse="%2C")), "%5D&count=", maxCount, sep="")
+
+# Add the UUIDs as an array []; encase each UUID in quotation marks and separate with commas
+## Note that we need two separate URLs (one for specimen records and another for specimens records with associated media)
+stURL <- paste(basetURL, "&rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D%7D", sep="")
+mtURL <- paste(basetURL, "&rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D,%22hasImage%22:true%7D", sep="")
+
+
+# Get the taxonomic information
+sTaxaRAW <- jsonlite::read_json(stURL)
+mTaxaRAW <- jsonlite::read_json(mtURL)
+
+
+# Manipulate the data to facilitate plotting
+
+## Flatten the list structure and convert to a data frame
+sTaxa <- as.data.frame(unlist(sTaxaRAW$kingdom))
+mTaxa <- as.data.frame(unlist(mTaxaRAW$kingdom))
+
+## Convert the row names into a new column
+sTaxa <- cbind(rownames(sTaxa), data.frame(sTaxa, row.names=NULL))
+mTaxa <- cbind(rownames(mTaxa), data.frame(mTaxa, row.names=NULL))
+
+## Rename the columns to make the next few steps easier
+colnames(sTaxa)<- c("mashup","Count")
+colnames(mTaxa)<- c("mashup","Count")
+
+## Split the first column into separate columns
+sTaxa <- cbind(data.frame(do.call("rbind", strsplit(as.character(sTaxa$mashup), ".", fixed = TRUE))), sTaxa$Count)
+sTaxa <- subset(sTaxa, select = c("X1", "X2", "X3","sTaxa$Count"))
+mTaxa <- cbind(data.frame(do.call("rbind", strsplit(as.character(mTaxa$mashup), ".", fixed = TRUE))), mTaxa$Count)
+mTaxa <- subset(mTaxa, select = c("X1", "X2", "X3","mTaxa$Count"))
+
+## Rename the columns to make sense
+colnames(sTaxa)<- c("Kingdom", "Key", "Family", "Count")
+colnames(mTaxa)<- c("Kingdom", "Key", "Family", "Count")
+
+
+# Plot the taxonomic coverage
+par(mfrow=c(1,2))   # plot side by side
+with(subset(sTaxa, Key == "itemCount"), {
+  pie(Count, labels = Kingdom, main=paste("Specimen Taxonomic Coverage \nfor", institution))
+})
+with(subset(mTaxa, Key == "itemCount"), {
+  pie(Count, labels = Kingdom, main=paste("Media Taxonomic Coverage \nfor", institution))
+})
+```
+
+
+# Next, let's look at the range of dates collected for the institution
+For this one, we will use the [Date Histogram](https://github.com/iDigBio/idigbio-search-api/wiki#date-histogram) API endpoint.
+```{r}
+# Initialize the API URL
+tURL <- paste("https://search.idigbio.org/v2/summary/datehist", "?dateInterval=", dateInterval, sep="")
+
+# Add the UUIDs as an array []; encase each UUID in quotation marks and separate with commas
+tURL <- paste(tURL, "&rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D%7D", sep="")
+
+  
+# Get the information on date collected
+sDateCollRAW <- jsonlite::read_json(tURL)
+
+
+# Manipulate the data to facilitate plotting
+
+## Flatten the list structure and convert to a data frame
+sDateColl <- as.data.frame(unlist(sDateCollRAW$dates))
+
+## Convert the row names into a new column
+sDateColl <- cbind(rownames(sDateColl), data.frame(sDateColl, row.names=NULL))
+
+## Rename the columns to make the next few steps easier
+colnames(sDateColl)<- c("mashup","Count")
+
+## Split the first column into separate columns
+sDateColl <- cbind(data.frame(do.call("rbind", strsplit(as.character(sDateColl$mashup), ".", fixed = TRUE))), sDateColl$Count)
+sDateColl <- subset(sDateColl, select = c("X1", "sDateColl$Count"))
+
+## Rename the columns to make sense
+colnames(sDateColl)<- c("Date", "Count")
+
+## Convert the dates from string to date format
+sDateColl$Date <- as.Date(substr(sDateColl$Date, 1, 10))
+
+# Plot the temporal coverage
+with(sDateColl, {
+  barplot(Count, names.arg = format(Date, '%Y'), xlab="Collected", ylab="Count", main=paste("Specimen Temporal Coverage for", institution), las=3, col="forestgreen")
+})
+```
+
+
+# Last, but not least, let's look at the data quality flags applied to the data
+```{r}
+# Initialize the API URL
+fURL <- paste("https://search.idigbio.org/v2/summary/top/records/?top_fields=%22flags%22&count=", maxCount, sep="")
+
+# Add the UUIDs as an array []; encase each UUID in quotation marks and separate with commas
+fURL <- paste(fURL, "&rq=%7B%22recordset%22:%5B",gsub("\"","%22",paste(dQuote(unlist(instUUID),FALSE),collapse="%2C")),"%5D%7D", sep="")
+
+
+# Get the top data quality flags
+sFlagsRAW <- jsonlite::read_json(fURL)
+
+
+# Manipulate the data to facilitate plotting
+
+## Flatten the JSON structure and convert to a data frame
+sFlags <- as.data.frame(unlist(sFlagsRAW$flags))
+
+## Convert the row names into a new column
+sFlags <- cbind(rownames(sFlags), data.frame(sFlags, row.names=NULL))
+
+## Rename the columns to make the next few steps easier
+colnames(sFlags)<- c("mashup","Count")
+
+## Split the first column into separate columns
+sFlags <- cbind(data.frame(do.call("rbind", strsplit(as.character(sFlags$mashup), ".", fixed = TRUE))), sFlags$Count)
+sFlags <- subset(sFlags, select = c("X1", "sFlags$Count"))
+
+## Rename the columns to make sense
+colnames(sFlags)<- c("Flag", "Count")
+
+
+# Plot the data quality flags
+with(sFlags, {
+  dotchart(Count, labels=Flag, pch=17, xlab="Count", ylab="Flag", main=paste("Data Quality Flags for", institution), col="firebrick")
+})
+```
+
