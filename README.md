@@ -8,11 +8,11 @@ This repository supports the products of the [iDigBio API User Group (R-based)](
 
 ### Join us!
 
-Community members of all backgrounds (collections staff, researchers, IT, etc.) and levels of programming experience (including R novice) are encouraged to use this working group as a place to discover and discuss API data access, issues, and solutions, as well as to build a dispersed network of API power users. The working group will maintain relevant code for reuse here in this GitHub repository. If you would like to know more about the working group, please attend one of our informal, drop-in ["office hours"](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based) (see below).
+Community members of all backgrounds (collections staff, researchers, IT, etc.) and levels of programming experience (including R novice) are encouraged to use this working group as a place to discover and discuss API data access, issues, and solutions, as well as to build a dispersed network of API power users. The working group will maintain relevant code for reuse here in this GitHub repository. If you would like to know more about the working group, please attend one of our informal, drop-in ["office hours"](https://www.idigbio.org/content/2021-open-office-hours-hosted-api-user-group-r-based) (see below).
 
 ### Drop-in office hours
 
-At the beginning of each [office hour session](https://www.idigbio.org/content/open-office-hours-hosted-api-user-group-r-based) we host a 5-10 minute demo, followed by an open agenda. If you know you have a question or topic that you'd like to focus on, feel free to sign up ahead of time on this [google doc](https://bit.ly/2wypVsY) to ensure that it is addressed in a particular session. Participants are welcome to drop by for only part of the hour.
+At the beginning of each [office hour session](https://www.idigbio.org/content/2021-open-office-hours-hosted-api-user-group-r-based) we try to host a 5-10 minute demo, followed by an open agenda. If you know you have a question or topic that you'd like to focus on, feel free to let us know by [submitting an issue to this repository](https://github.com/biodiversity-specimen-data/specimen-data-use-case/issues). Participants are welcome to drop by for only part of the hour.
 
 ### Sources for specimen data
 
