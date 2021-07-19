@@ -16,4 +16,4 @@ category: media
 Researcher searches for herbarium specimens of species in the genus "Acer" and would like to download media associated with any records returned by this search. Media downloaded must retain relationship to specimen record.
 
 ### Links to external solutions
--
+- [Module 3: Acquiring images](https://github.com/richiehodel/Botany2021_DLworkshop/tree/main/3_image_acquisition), Python, as part of BOTANY 2021 Workshop: _Using deep learning with digitized herbarium specimen image data_
