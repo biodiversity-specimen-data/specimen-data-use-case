@@ -10,9 +10,12 @@ iDigBio has four API's:
   4. [Media APIs](https://www.idigbio.org/wiki/index.php/IDigBio_API#Record_.26_Media_APIs)    
     - used for returning raw data for a media record
     
-  
- ## Example of Download API query     
- ### Full text    
+
+
+ # Example of Download API query     
+ 
+ ## Full text    
+ 
  Here I search for Mrs, Ms, and Miss in fulltext. Change the **email@college.edu** to your email address. This can be copy and pasted into your web browser.   
  
  ```
